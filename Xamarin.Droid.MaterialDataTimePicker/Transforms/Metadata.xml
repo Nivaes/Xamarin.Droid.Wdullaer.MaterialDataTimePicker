@@ -1,4 +1,11 @@
 ﻿<metadata>
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker']" name="managedName">Com.Wdullaer.MaterialDateTimePicker</attr>
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
+
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']" name="visibility">public</attr>
+
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']/method[@name='getVersion']"/>
+
   <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='compareTo' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.Timepoint']]/parameter[1]"
        name="managedType">
     Java.Lang.Object
