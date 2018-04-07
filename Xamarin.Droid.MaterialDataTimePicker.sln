@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Droid.MaterialDataTimePicker", "Xamarin.Droid.MaterialDataTimePicker\Xamarin.Droid.MaterialDataTimePicker.csproj", "{647F59AA-4042-471B-9C5E-4A93B1AA4C68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.DroidMaterialDataTimePickerSample", "Xamarin.Droid.MaterialDataTimePickerSample\Xamarin.DroidMaterialDataTimePickerSample.csproj", "{5D4AA5FE-76B6-42DC-9FB5-159B3B07F7F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Droid.MaterialDataTimePickerSample", "Xamarin.Droid.MaterialDataTimePickerSample\Xamarin.Droid.MaterialDataTimePickerSample.csproj", "{5D4AA5FE-76B6-42DC-9FB5-159B3B07F7F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

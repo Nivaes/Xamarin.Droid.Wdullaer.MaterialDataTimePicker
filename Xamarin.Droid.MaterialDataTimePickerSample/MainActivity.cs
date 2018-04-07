@@ -1,7 +1,12 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Support.V4.App;
 using Android.Support.V4.View;
+//using Android.Support.V4.App;
+//using Android.Support.V4.View;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 
 namespace Nivaes.MaterialDataTimePicker.Droid
 {
@@ -12,67 +17,64 @@ namespace Nivaes.MaterialDataTimePicker.Droid
     public class MainActivity : AppCompatActivity
     {
         ViewPager viewPager;
+        PickerAdapter adapter;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            //base.SetContentView(R.layout.activity_main);
+            base.SetContentView(Resource.Layout.activity_main);
 
-            //adapter = new PickerAdapter(getFragmentManager());
-            //viewPager = findViewById(R.id.pager);
-            //viewPager.setAdapter(adapter);
+            adapter = new PickerAdapter(base.FragmentManager);
+            viewPager = base.FindViewById< ViewPager>(Resource.Id.pager);
+            viewPager.Adapter = adapter;
 
-            //setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
-            //TabLayout tabLayout = findViewById(R.id.tabs);
-            //tabLayout.setupWithViewPager(viewPager);
-            //for (int i = 0; i < adapter.getCount(); i++) //noinspection ConstantConditions
-            //    tabLayout.getTabAt(i).setText(adapter.getTitle(i));
+            SetSupportActionBar(base.FindViewById<Toolbar>(Resource.Id.toolbar));
+            TabLayout tabLayout = base.FindViewById< TabLayout>(Resource.Id.tabs);
+            tabLayout.SetupWithViewPager(viewPager);
+            for (int i = 0; i < adapter.Count; i++) //noinspection ConstantConditions
+                tabLayout.GetTabAt(i).SetText(adapter.GetTitle(i));
         }
 
-        //private class PickerAdapter extends FragmentPagerAdapter
-        //{
-        //private static final int NUM_PAGES = 2;
-        //Fragment timePickerFragment;
-        //Fragment datePickerFragment;
+        private class PickerAdapter : Android.Support.V13.App.FragmentPagerAdapter
+        {
+            private static int NUM_PAGES = 2;
+            Android.App.Fragment timePickerFragment;
+            Android.App.Fragment datePickerFragment;
 
-        //PickerAdapter(FragmentManager fm)
-        //{
-        //    super(fm);
-        //    timePickerFragment = new TimePickerFragment();
-        //    datePickerFragment = new DatePickerFragment();
-        //}
+            public PickerAdapter(Android.App.FragmentManager fm)
+                :base(fm)
+            {
+                timePickerFragment = new TimePickerFragment();
+                datePickerFragment = new DatePickerFragment();
+            }
 
-        //@Override
-        //public int getCount()
-        //{
-        //    return NUM_PAGES;
-        //}
+            public override int Count => NUM_PAGES;
 
-        //@Override
-        //public Fragment getItem(int position)
-        //{
-        //    switch (position)
-        //    {
-        //        case 0:
-        //            return timePickerFragment;
-        //        case 1:
-        //        default:
-        //            return datePickerFragment;
-        //    }
-        //}
+            public override Android.App.Fragment GetItem(int position)
+            {
+                switch (position)
+                {
+                    case 0:
+                        return timePickerFragment;
+                    case 1:
+                    default:
+                        return datePickerFragment;
+                }
+            }
 
-        //int getTitle(int position)
-        //{
-        //    switch (position)
-        //    {
-        //        case 0:
-        //            return R.string.tab_title_time;
-        //        case 1:
-        //        default:
-        //            return R.string.tab_title_date;
-        //    }
-        //}
+            public int GetTitle(int position)
+            {
+                switch (position)
+                {
+                    case 0:
+                        return Resource.String.tab_title_time;
+                    case 1:
+                    default:
+                        return Resource.String.tab_title_date;
+                }
+            }
+        }
     }
 }
 

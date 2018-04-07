@@ -1,173 +1,107 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-//using Android.App;
-//using Android.Content;
-//using Android.OS;
-//using Android.Runtime;
-//using Android.Views;
-//using Android.Widget;
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Java.Util;
 
-//namespace Nivaes.MaterialDataTimePicker.Droid
-//{
-//    public class DatePickerFragment : Fragment, DatePickerDialog.IOnDateSetListener
-//    {
-//        private TextView dateTextView;
-//        private CheckBox modeDarkDate;
-//        private CheckBox modeCustomAccentDate;
-//        private CheckBox vibrateDate;
-//        private CheckBox dismissDate;
-//        private CheckBox titleDate;
-//        private CheckBox showYearFirst;
-//        private CheckBox showVersion2;
-//        private CheckBox switchOrientation;
-//        private CheckBox limitSelectableDays;
-//        private CheckBox highlightDays;
-//        private DatePickerDialog dpd;
+namespace Nivaes.MaterialDataTimePicker.Droid
+{
+    public class DatePickerFragment : Fragment, DatePickerDialog.IOnDateSetListener
+    {
+        private TextView dateTextView;
+        private CheckBox modeDarkDate;
+        private CheckBox modeCustomAccentDate;
+        private CheckBox vibrateDate;
+        private CheckBox dismissDate;
+        private CheckBox titleDate;
+        private CheckBox showYearFirst;
+        private CheckBox showVersion2;
+        private CheckBox switchOrientation;
+        private CheckBox limitSelectableDays;
+        private CheckBox highlightDays;
+        private DatePickerDialog dpd;
 
-//        public DatePickerFragment()
-//        {
-//            // Required empty public constructor
-//        }
+        public DatePickerFragment()
+        {
+            // Required empty public constructor
+        }
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            View view = inflater.Inflate(Resource.Layout.datepicker_layout, container, false);
+
+            // Find our View instances
+            dateTextView = view.FindViewById<TextView>(Resource.Id.date_textview);
+            Button dateButton = view.FindViewById<Button>(Resource.Id.date_button);
+            modeDarkDate = view.FindViewById<CheckBox>(Resource.Id.mode_dark_date);
+            modeCustomAccentDate = view.FindViewById<CheckBox>(Resource.Id.mode_custom_accent_date);
+            vibrateDate = view.FindViewById<CheckBox>(Resource.Id.vibrate_date);
+            dismissDate = view.FindViewById<CheckBox>(Resource.Id.dismiss_date);
+            titleDate = view.FindViewById<CheckBox>(Resource.Id.title_date);
+            showYearFirst = view.FindViewById<CheckBox>(Resource.Id.show_year_first);
+            showVersion2 = view.FindViewById<CheckBox>(Resource.Id.show_version_2);
+            switchOrientation = view.FindViewById<CheckBox>(Resource.Id.switch_orientation);
+            limitSelectableDays = view.FindViewById<CheckBox>(Resource.Id.limit_dates);
+            highlightDays = view.FindViewById<CheckBox>(Resource.Id.highlight_dates);
+
+            view.FindViewById(Resource.Id.original_button).Click += (o, e) =>
+            {
+                //Calendar now = Calendar.Instance;
+                //new Android.App.DatePickerDialog(
+                //        base.Activity,
+                //        OnDataSet,
+                //        now.Get(Calendar.Year),
+                //        now.Get(Calendar.Month),
+                //        now.Get(Calendar.DayOfMonth)
+                //).Show();
+            };
+
+            // Show a datepicker when the dateButton is clicked
+            dateButton.Click += (o, e) =>
+            {
+                Calendar now = Calendar.Instance;
+                /*
+                It is recommended to always create a new instance whenever you need to show a Dialog.
+                The sample app is reusing them because it is useful when looking for regressions
+                during testing
+                 */
+                //if (dpd == null)
+                //{
+                //dpd = new DatePickerDialog(base.Context,
+                //            now.Get(Calendar.Year),
+                //            now.Get(Calendar.Month),
+                //            now.Get(Calendar.DayOfMonth)
+                //    );
+            };
+
+            return view;
+        }
+
+        private void OnDataSet(object sender, TimePickerDialog.TimeSetEventArgs e)
+        {
+
+        }
 
 
-//        @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState)
-//        {
-//            View view = inflater.inflate(R.layout.datepicker_layout, container, false);
+        public override void OnResume()
+        {
+            base.OnResume();
+            //DatePickerDialog dpd = (DatePickerDialog)base.FragmentManager.FindFragmentByTag("Datepickerdialog");
+            //if (dpd != null) dpd.SetOnDateSetListener(this);
+        }
 
-//            // Find our View instances
-//            dateTextView = view.findViewById(R.id.date_textview);
-//            Button dateButton = view.findViewById(R.id.date_button);
-//            modeDarkDate = view.findViewById(R.id.mode_dark_date);
-//            modeCustomAccentDate = view.findViewById(R.id.mode_custom_accent_date);
-//            vibrateDate = view.findViewById(R.id.vibrate_date);
-//            dismissDate = view.findViewById(R.id.dismiss_date);
-//            titleDate = view.findViewById(R.id.title_date);
-//            showYearFirst = view.findViewById(R.id.show_year_first);
-//            showVersion2 = view.findViewById(R.id.show_version_2);
-//            switchOrientation = view.findViewById(R.id.switch_orientation);
-//            limitSelectableDays = view.findViewById(R.id.limit_dates);
-//            highlightDays = view.findViewById(R.id.highlight_dates);
+        void DatePickerDialog.IOnDateSetListener.OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
+        {
 
-//            view.findViewById(R.id.original_button).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v)
-//            {
-//                Calendar now = Calendar.getInstance();
-//                new android.app.DatePickerDialog(
-//                        getActivity(),
-//                        new android.app.DatePickerDialog.OnDateSetListener() {
-//                            @Override
-//                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
-//                {
-//                    Log.d("Orignal", "Got clicked");
-//                }
-//            },
-//                        now.get(Calendar.YEAR),
-//                        now.get(Calendar.MONTH),
-//                        now.get(Calendar.DAY_OF_MONTH)
-//                ).show();
-//        }
-//    });
-
-//        // Show a datepicker when the dateButton is clicked
-//        dateButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v)
-//    {
-//        Calendar now = Calendar.getInstance();
-//        /*
-//        It is recommended to always create a new instance whenever you need to show a Dialog.
-//        The sample app is reusing them because it is useful when looking for regressions
-//        during testing
-//         */
-//        if (dpd == null)
-//        {
-//            dpd = DatePickerDialog.newInstance(
-//                    DatePickerFragment.this,
-//                    now.get(Calendar.YEAR),
-//                    now.get(Calendar.MONTH),
-//                    now.get(Calendar.DAY_OF_MONTH)
-//            );
-//        }
-//        else
-//        {
-//            dpd.initialize(
-//                    DatePickerFragment.this,
-//                    now.get(Calendar.YEAR),
-//                    now.get(Calendar.MONTH),
-//                    now.get(Calendar.DAY_OF_MONTH)
-//            );
-//        }
-//        dpd.setThemeDark(modeDarkDate.isChecked());
-//        dpd.vibrate(vibrateDate.isChecked());
-//        dpd.dismissOnPause(dismissDate.isChecked());
-//        dpd.showYearPickerFirst(showYearFirst.isChecked());
-//        dpd.setVersion(showVersion2.isChecked() ? DatePickerDialog.Version.VERSION_2 : DatePickerDialog.Version.VERSION_1);
-//        if (modeCustomAccentDate.isChecked())
-//        {
-//            dpd.setAccentColor(Color.parseColor("#9C27B0"));
-//        }
-//        if (titleDate.isChecked())
-//        {
-//            dpd.setTitle("DatePicker Title");
-//        }
-//        if (highlightDays.isChecked())
-//        {
-//            Calendar date1 = Calendar.getInstance();
-//            Calendar date2 = Calendar.getInstance();
-//            date2.add(Calendar.WEEK_OF_MONTH, -1);
-//            Calendar date3 = Calendar.getInstance();
-//            date3.add(Calendar.WEEK_OF_MONTH, 1);
-//            Calendar[] days = { date1, date2, date3 };
-//            dpd.setHighlightedDays(days);
-//        }
-//        if (limitSelectableDays.isChecked())
-//        {
-//            Calendar[] days = new Calendar[13];
-//            for (int i = -6; i < 7; i++)
-//            {
-//                Calendar day = Calendar.getInstance();
-//                day.add(Calendar.DAY_OF_MONTH, i * 2);
-//                days[i + 6] = day;
-//            }
-//            dpd.setSelectableDays(days);
-//        }
-//        if (switchOrientation.isChecked())
-//        {
-//            if (dpd.getVersion() == DatePickerDialog.Version.VERSION_1)
-//            {
-//                dpd.setScrollOrientation(DatePickerDialog.ScrollOrientation.HORIZONTAL);
-//            }
-//            else
-//            {
-//                dpd.setScrollOrientation(DatePickerDialog.ScrollOrientation.VERTICAL);
-//            }
-//        }
-//        dpd.show(getFragmentManager(), "Datepickerdialog");
-//    }
-//});
-
-//        return view;
-//    }
-
-//    @Override
-//    public void onResume()
-//{
-//    super.onResume();
-//    DatePickerDialog dpd = (DatePickerDialog)getFragmentManager().findFragmentByTag("Datepickerdialog");
-//    if (dpd != null) dpd.setOnDateSetListener(this);
-//}
-
-//@Override
-//    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth)
-//{
-//    String date = "You picked the following date: " + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
-//    dateTextView.setText(date);
-//}
-//    }
-//}
+            //String date = "You picked the following date: " + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
+            //dateTextView.SetText(date);
+        }
+    }
+}
