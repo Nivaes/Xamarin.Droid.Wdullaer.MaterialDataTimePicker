@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5967BE7E-6B10-4EF1-9F85-AC964AC47310}</ProjectGuid>
+    <ProjectGuid>{5D4AA5FE-76B6-42DC-9FB5-159B3B07F7F3}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -78,9 +78,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AndroidMaterialDataTimePicker\AndroidMaterialDataTimePicker.csproj">
-      <Project>{5b2870d5-f120-433e-a1e6-e05fa162e555}</Project>
-      <Name>AndroidMaterialDataTimePicker</Name>
+    <ProjectReference Include="..\Xamarin.Droid.MaterialDataTimePicker\Xamarin.Droid.MaterialDataTimePicker.csproj">
+      <Project>{647f59aa-4042-471b-9c5e-4a93b1aa4c68}</Project>
+      <Name>Xamarin.Droid.MaterialDataTimePicker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
