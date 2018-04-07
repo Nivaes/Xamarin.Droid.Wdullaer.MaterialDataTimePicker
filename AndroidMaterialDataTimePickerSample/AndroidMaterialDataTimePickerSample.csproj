@@ -77,6 +77,12 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AndroidMaterialDataTimePicker\AndroidMaterialDataTimePicker.csproj">
+      <Project>{5b2870d5-f120-433e-a1e6-e05fa162e555}</Project>
+      <Name>AndroidMaterialDataTimePicker</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 		Other similar extension points exist, see Microsoft.Common.targets.

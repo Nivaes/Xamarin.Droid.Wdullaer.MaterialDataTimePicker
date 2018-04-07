@@ -1,0 +1,13 @@
+﻿<metadata>
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='compareTo' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.Timepoint']]/parameter[1]"
+       name="managedType">
+    Java.Lang.Object
+  </attr>
+
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView']" name="managedName">
+    AbstractMonthView
+  </attr>
+
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]"/>
+
+</metadata>

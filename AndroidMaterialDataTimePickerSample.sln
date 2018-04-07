@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidMaterialDataTimePickerSample", "AndroidMaterialDataTimePickerSample\AndroidMaterialDataTimePickerSample.csproj", "{5967BE7E-6B10-4EF1-9F85-AC964AC47310}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidMaterialDataTimePicker", "AndroidMaterialDataTimePicker\AndroidMaterialDataTimePicker.csproj", "{5B2870D5-F120-433E-A1E6-E05FA162E555}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{5967BE7E-6B10-4EF1-9F85-AC964AC47310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5967BE7E-6B10-4EF1-9F85-AC964AC47310}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5967BE7E-6B10-4EF1-9F85-AC964AC47310}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5B2870D5-F120-433E-A1E6-E05FA162E555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2870D5-F120-433E-A1E6-E05FA162E555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2870D5-F120-433E-A1E6-E05FA162E555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2870D5-F120-433E-A1E6-E05FA162E555}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

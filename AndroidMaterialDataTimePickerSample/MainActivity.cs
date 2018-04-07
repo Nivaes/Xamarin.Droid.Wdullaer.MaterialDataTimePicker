@@ -2,7 +2,7 @@
 using Android.Widget;
 using Android.OS;
 
-namespace AndroidMaterialDataTimePickerSample
+namespace Nivaes.MaterialDataTimePicker.Droid
 {
     [Activity(Label = "AndroidMaterialDataTimePickerSample", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
