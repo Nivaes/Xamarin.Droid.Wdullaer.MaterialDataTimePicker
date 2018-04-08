@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Com.Wdullaer.MaterialDateTimePicker.Time;
 using Java.Util;
 
 namespace Nivaes.MaterialDataTimePicker.Droid
 {
-    public class TimePickerFragment : Fragment, TimePickerDialog.IOnTimeSetListener
+    public class TimePickerFragment : Android.App.Fragment, Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener
     {
         private TextView timeTextView;
         private CheckBox mode24Hours;
@@ -26,7 +22,7 @@ namespace Nivaes.MaterialDataTimePicker.Droid
         private CheckBox limitSelectableTimes;
         private CheckBox disableSpecificTimes;
         private CheckBox showVersion2;
-        private TimePickerDialog tpd;
+        private Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog tpd;
 
         public TimePickerFragment()
         {
@@ -54,13 +50,73 @@ namespace Nivaes.MaterialDataTimePicker.Droid
             view.FindViewById(Resource.Id.original_button).Click += (o, e) =>
             {
                 Calendar now = Calendar.Instance;
-                //new Android.App.TimePickerDialog(
-                //    base.Activity,
-                //    ,
-                //                now.Get(Calendar.HourOfDay),
-                //                now.Get(Calendar.Minute),
-                //                mode24Hours.Checked
-                //        ).Show();
+                new Android.App.TimePickerDialog(
+                    base.Activity,
+                        (object sender, Android.App.TimePickerDialog.TimeSetEventArgs arg) =>
+                        {
+                            Log.Debug("Orignal", "Got clicked");
+                        },
+                        now.Get(CalendarField.HourOfDay),
+                        now.Get(CalendarField.Minute),
+                        mode24Hours.Checked
+                        ).Show();
+            };
+
+            timeButton.Click += (o, e) =>
+            {
+                Calendar now = Calendar.Instance;
+                tpd = new Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog();
+                tpd.Initialize(this, now.Get(CalendarField.HourOfDay), now.Get(CalendarField.Minute), now.Get(CalendarField.Second), mode24Hours.Checked);
+
+                tpd.SetThemeDark(modeDarkTime.Checked);
+                tpd.Vibrate(vibrateTime.Checked);
+                tpd.DismissOnPause(dismissTime.Checked);
+                tpd.EnableSeconds(enableSeconds.Checked);
+                tpd.SetVersion(showVersion2.Checked ? TimePickerDialog.Version.Version2 : TimePickerDialog.Version.Version1);
+                if (modeCustomAccentTime.Checked)
+                {
+                    tpd.AccentColor = Color.ParseColor("#9C27B0");
+                }
+                if (titleTime.Checked)
+                {
+                    tpd.Title = "TimePicker Title";
+                }
+                if (limitSelectableTimes.Checked)
+                {
+                    if (enableSeconds.Checked)
+                    {
+                        tpd.SetTimeInterval(3, 5, 10);
+                    }
+                    else
+                    {
+                        tpd.SetTimeInterval(3, 5, 60);
+                    }
+                }
+                if (disableSpecificTimes.Checked)
+                {
+                    Timepoint[] disabledTimes = {
+                            new Timepoint(10),
+                            new Timepoint(10, 30),
+                            new Timepoint(11),
+                            new Timepoint(12, 30)
+                    };
+                    tpd.SetDisabledTimes(disabledTimes);
+                }
+                tpd.TimeSet += (oo, ee) =>
+                {
+
+                };
+
+                //tpd.SetOnCancelListener()
+
+                //tpd.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                //    @Override
+                //    public void onCancel(DialogInterface dialogInterface)
+                //{
+                //    Log.d("TimePicker", "Dialog was cancelled");
+                //}
+                //});
+                tpd.Show(base.FragmentManager, "Timepickerdialog");
             };
 
             return view;
@@ -70,17 +126,17 @@ namespace Nivaes.MaterialDataTimePicker.Droid
         {
             base.OnResume();
 
-            //TimePickerDialog tpd = (TimePickerDialog)base.FragmentManager.FindFragmentByTag("Timepickerdialog");
-            //if (tpd != null) tpd.ti SetOnTimeSetListener(this);
+            TimePickerDialog tpd = (TimePickerDialog)base.FragmentManager.FindFragmentByTag("Timepickerdialog");
+            if (tpd != null) tpd.OnTimeSetListener = this;
         }
 
-        void TimePickerDialog.IOnTimeSetListener.OnTimeSet(TimePicker view, int hourOfDay, int minute)
+        void Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener.OnTimeSet(Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog view, int hourOfDay, int minute, int second)
         {
-            //    String hourString = hourOfDay < 10 ? "0" + hourOfDay : "" + hourOfDay;
-            //    String minuteString = minute < 10 ? "0" + minute : "" + minute;
-            //    String secondString = second < 10 ? "0" + second : "" + second;
-            //    String time = "You picked the following time: " + hourString + "h" + minuteString + "m" + secondString + "s";
-            //    timeTextView.setText(time);
+            String hourString = hourOfDay < 10 ? "0" + hourOfDay : "" + hourOfDay;
+            String minuteString = minute < 10 ? "0" + minute : "" + minute;
+            String secondString = second < 10 ? "0" + second : "" + second;
+            String time = "You picked the following time: " + hourString + "h" + minuteString + "m" + secondString + "s";
+            timeTextView.Text = time;
         }
     }
 }

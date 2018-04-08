@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-//using Android.App;
-using Android.Content;
-using Android.Graphics;
+﻿using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -123,6 +115,11 @@ namespace Nivaes.MaterialDataTimePicker.Droid
                         dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Vertical);
                     }
                 }
+                dpd.DateSet += (oo, ee) =>
+                {
+
+                };
+
                 dpd.Show(base.FragmentManager, "Datepickerdialog");
             };
 
