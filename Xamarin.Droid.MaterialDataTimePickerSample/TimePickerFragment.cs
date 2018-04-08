@@ -65,8 +65,7 @@ namespace Nivaes.MaterialDataTimePicker.Droid
             timeButton.Click += (o, e) =>
             {
                 Calendar now = Calendar.Instance;
-                tpd = new Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog();
-                tpd.Initialize(this, now.Get(CalendarField.HourOfDay), now.Get(CalendarField.Minute), now.Get(CalendarField.Second), mode24Hours.Checked);
+                tpd = new Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog(this, now.Get(CalendarField.HourOfDay), now.Get(CalendarField.Minute), now.Get(CalendarField.Second), mode24Hours.Checked);
 
                 tpd.SetThemeDark(modeDarkTime.Checked);
                 tpd.Vibrate(vibrateTime.Checked);

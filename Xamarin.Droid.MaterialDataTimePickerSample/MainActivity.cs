@@ -3,8 +3,6 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
-//using Android.Support.V4.App;
-//using Android.Support.V4.View;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 
@@ -38,7 +36,6 @@ namespace Nivaes.MaterialDataTimePicker.Droid
 
         private class PickerAdapter : Android.Support.V13.App.FragmentPagerAdapter
         {
-            private static int NUM_PAGES = 2;
             Android.App.Fragment timePickerFragment;
             Android.App.Fragment datePickerFragment;
 
@@ -49,7 +46,7 @@ namespace Nivaes.MaterialDataTimePicker.Droid
                 datePickerFragment = new DatePickerFragment();
             }
 
-            public override int Count => NUM_PAGES;
+            public override int Count => 2;
 
             public override Android.App.Fragment GetItem(int position)
             {

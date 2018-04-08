@@ -66,8 +66,7 @@ namespace Nivaes.MaterialDataTimePicker.Droid
             {
                 Calendar now = Calendar.Instance;
 
-                dpd = new Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog();
-                dpd.Initialize(this, now.Get(CalendarField.Year), now.Get(CalendarField.Month), now.Get(CalendarField.DayOfMonth));
+                dpd = new Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog(this, now.Get(CalendarField.Year), now.Get(CalendarField.Month), now.Get(CalendarField.DayOfMonth));
 
                 dpd.SetThemeDark(modeDarkDate.Checked);
                 dpd.Vibrate(vibrateDate.Checked);

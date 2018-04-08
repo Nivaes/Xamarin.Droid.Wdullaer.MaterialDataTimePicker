@@ -2,14 +2,13 @@
 {
     public partial class DatePickerDialog
     {
-        DatePickerDialog.ScrollOrientation IDatePickerController.ScrollOrientation
+        public DatePickerDialog(global::Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth)
         {
-            get => GetScrollOrientation();
+            Initialize(callBack, year, monthOfYear, dayOfMonth);
         }
 
-        DatePickerDialog.Version IDatePickerController.Version
-        {
-            get => GetVersion();
-        }
+        DatePickerDialog.ScrollOrientation IDatePickerController.ScrollOrientation => GetScrollOrientation();
+
+        DatePickerDialog.Version IDatePickerController.Version => GetVersion();
     }
 }

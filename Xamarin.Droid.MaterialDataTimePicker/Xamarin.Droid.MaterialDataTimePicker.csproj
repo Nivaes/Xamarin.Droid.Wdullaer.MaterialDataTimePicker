@@ -38,6 +38,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additions\TimePickerDialog.cs" />
     <Compile Include="Additions\DatePickerDialog.cs" />
     <Compile Include="Additions\MonthView.cs" />
     <Compile Include="Additions\SimpleMonthAdapter.cs" />
@@ -51,6 +52,9 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="NuGet.CommandLine">
+      <Version>4.6.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v13" Version="27.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2" />
@@ -63,7 +67,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release NuGet.exe pack "$(ProjectPath)" -Prop Configuration=Release</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release NuGet.exe pack "$(ProjectDir)MaterialDataTimePicker.nuspec"  -Prop Configuration=Release</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

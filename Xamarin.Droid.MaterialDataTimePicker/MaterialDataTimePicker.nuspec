@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata>
     <id>Nivaes.Xamarin.Droid.MaterialDateTimePicker</id>
-    <version>3.5.2.2</version>
+    <version>3.5.2.3</version>
     <title>Xamarin.Bindings.MaterialDateTimePicker</title>
     <authors>Nivaes Systems</authors>
     <licenseUrl>http://opensource.org/licenses/ms-pl</licenseUrl>
