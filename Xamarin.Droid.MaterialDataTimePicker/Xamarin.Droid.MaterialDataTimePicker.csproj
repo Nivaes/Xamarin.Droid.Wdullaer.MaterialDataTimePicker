@@ -9,7 +9,7 @@
     <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AndroidMaterialDataTimePicker</RootNamespace>
+    <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
     <AssemblyName>AndroidMaterialDataTimePicker</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
@@ -38,7 +38,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Additions\MonthViewTouchHelperAdditions.cs" />
+    <Compile Include="Additions\DatePickerDialog.cs" />
+    <Compile Include="Additions\MonthView.cs" />
+    <Compile Include="Additions\SimpleMonthAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +51,12 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Android.Support.Design">
+      <Version>27.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v13">
+      <Version>27.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v4">
       <Version>27.0.2</Version>
     </PackageReference>

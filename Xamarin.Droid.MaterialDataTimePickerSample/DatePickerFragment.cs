@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Android.App;
+//using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Com.Wdullaer.MaterialDateTimePicker.Date;
 using Java.Util;
 
 namespace Nivaes.MaterialDataTimePicker.Droid
 {
-    public class DatePickerFragment : Fragment, DatePickerDialog.IOnDateSetListener
+    public class DatePickerFragment : Android.App.Fragment, Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener
     {
         private TextView dateTextView;
         private CheckBox modeDarkDate;
@@ -26,7 +28,7 @@ namespace Nivaes.MaterialDataTimePicker.Droid
         private CheckBox switchOrientation;
         private CheckBox limitSelectableDays;
         private CheckBox highlightDays;
-        private DatePickerDialog dpd;
+        private Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog dpd;
 
         public DatePickerFragment()
         {
@@ -53,42 +55,34 @@ namespace Nivaes.MaterialDataTimePicker.Droid
 
             view.FindViewById(Resource.Id.original_button).Click += (o, e) =>
             {
-                //Calendar now = Calendar.Instance;
-                //new Android.App.DatePickerDialog(
-                //        base.Activity,
-                //        OnDataSet,
-                //        now.Get(Calendar.Year),
-                //        now.Get(Calendar.Month),
-                //        now.Get(Calendar.DayOfMonth)
-                //).Show();
+                Calendar now = Calendar.Instance;
+                new Android.App.DatePickerDialog(
+                        base.Activity,
+                        (object sender, Android.App.DatePickerDialog.DateSetEventArgs arg) =>
+                        {
+                            Log.Debug("Orignal", "Got clicked");
+                        },
+                        now.Get(Calendar.Year),
+                        now.Get(Calendar.Month),
+                        now.Get(Calendar.DayOfMonth)
+                ).Show();
             };
 
             // Show a datepicker when the dateButton is clicked
             dateButton.Click += (o, e) =>
             {
                 Calendar now = Calendar.Instance;
-                /*
-                It is recommended to always create a new instance whenever you need to show a Dialog.
-                The sample app is reusing them because it is useful when looking for regressions
-                during testing
-                 */
-                //if (dpd == null)
-                //{
-                //dpd = new DatePickerDialog(base.Context,
-                //            now.Get(Calendar.Year),
-                //            now.Get(Calendar.Month),
-                //            now.Get(Calendar.DayOfMonth)
-                //    );
+             
+                dpd = new Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog(base.Context,
+                            this,
+                            now.Get(Calendar.Year),
+                            now.Get(Calendar.Month),
+                            now.Get(Calendar.DayOfMonth)
+                    );
             };
 
             return view;
         }
-
-        private void OnDataSet(object sender, TimePickerDialog.TimeSetEventArgs e)
-        {
-
-        }
-
 
         public override void OnResume()
         {
@@ -97,11 +91,20 @@ namespace Nivaes.MaterialDataTimePicker.Droid
             //if (dpd != null) dpd.SetOnDateSetListener(this);
         }
 
-        void DatePickerDialog.IOnDateSetListener.OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
+        void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
         {
 
-            //String date = "You picked the following date: " + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
-            //dateTextView.SetText(date);
+        }
+
+        void Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener.OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+        {
+            string date = "You picked the following date: " + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
+            dateTextView.Text = date;
+        }
+
+        void DatePickerDialog.IOnDateSetListener.OnDateSet(DatePickerDialog p0, int p1, int p2, int p3)
+        {
+            throw new NotImplementedException();
         }
     }
 }

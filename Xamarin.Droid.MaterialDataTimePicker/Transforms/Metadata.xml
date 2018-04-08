@@ -1,23 +1,59 @@
 ﻿<metadata>
   <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker']" name="managedName">Com.Wdullaer.MaterialDateTimePicker</attr>
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Date</attr>
   <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
 
+  <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']/class[@name='GravitySnapHelper.SnapListener']"/>-->
+  
+  <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.1']"/>
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.2']"/>
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.OnDateChangedListener']"/>
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.OnDateSetListener']"/>-->
+  <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.ScrollOrientation']"/>-->
+  <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.Version']"/>-->
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthAdapter']" name="visibility">public</attr>
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']/class[@name='MonthAdapter.CalendarDay']"/>
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthAdapter.CalendarDay']" name="visibility">public</attr>
+  <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]" name="visibility">public</attr>-->
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]"/>
+  
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.OnDateChangedListener']" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']" name="visibility">public</attr>
+  <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" name="visibility">protected</attr>-->
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" name="visibility">public</attr>
+
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']" name="visibility">public</attr>
+  
   <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']" name="visibility">public</attr>
-
-  <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView_OnDayClickListenerImplementor']/method[@name='onDayClick']" name="name">onDayClick</attr>-->
-
-  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']/method[@name='getVersion']"/>
-
   <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='compareTo' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.Timepoint']]/parameter[1]"
        name="managedType">
     Java.Lang.Object
   </attr>
 
-  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView']" name="managedName">
-    AbstractMonthView
-  </attr>
+  <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]" name="visibility">public</attr>-->
 
-  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]"/>
+  
+  
+  
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']/method[@name='getVersion']"/>
+  
+  <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']" name="visibility">public</attr>
+  
+  
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
+
+  <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']" name="visibility">public</attr>
+
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']/method[@name='getVersion']"/>-->
+  
+  <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']"/>
+  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']"/>-->
+
+  <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView']" name="managedName">
+    AbstractMonthView
+  </attr>-->
+
+  
 
 
   <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView_OnDayClickListenerImplementor']" name="name">MonthView_OnDayClickListenerImplementor</attr>
@@ -27,5 +63,5 @@
   <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']/field[@name='onDayClick']" name="name">onDayClick</attr>-->
   <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.Weight']/field[@name='WEIGHT']" name="name">SAMSUNG_WEIGHT</attr>-->
 
-  <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']"/>
+  
 </metadata>
