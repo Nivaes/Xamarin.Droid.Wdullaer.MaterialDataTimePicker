@@ -39,7 +39,7 @@ namespace Nivaes.MaterialDataTimePicker.Droid
 
             // Find our View instances
             timeTextView = view.FindViewById<TextView>(Resource.Id.time_textview);
-            Button timeButton = view.FindViewById<CheckBox>(Resource.Id.time_button);
+            Button timeButton = view.FindViewById<Button>(Resource.Id.time_button);
             mode24Hours = view.FindViewById<CheckBox>(Resource.Id.mode_24_hours);
             modeDarkTime = view.FindViewById<CheckBox>(Resource.Id.mode_dark_time);
             modeCustomAccentTime = view.FindViewById<CheckBox>(Resource.Id.mode_custom_accent_time);

@@ -5,6 +5,7 @@ using System.Text;
 
 //using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
@@ -62,9 +63,9 @@ namespace Nivaes.MaterialDataTimePicker.Droid
                         {
                             Log.Debug("Orignal", "Got clicked");
                         },
-                        now.Get(Calendar.Year),
-                        now.Get(Calendar.Month),
-                        now.Get(Calendar.DayOfMonth)
+                        now.Get(CalendarField.Year),
+                        now.Get(CalendarField.Month),
+                        now.Get(CalendarField.DayOfMonth)
                 ).Show();
             };
 
@@ -72,13 +73,57 @@ namespace Nivaes.MaterialDataTimePicker.Droid
             dateButton.Click += (o, e) =>
             {
                 Calendar now = Calendar.Instance;
-             
-                dpd = new Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog(base.Context,
-                            this,
-                            now.Get(Calendar.Year),
-                            now.Get(Calendar.Month),
-                            now.Get(Calendar.DayOfMonth)
-                    );
+
+                dpd = new Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog();
+                dpd.Initialize(this, now.Get(CalendarField.Year), now.Get(CalendarField.Month), now.Get(CalendarField.DayOfMonth));
+
+                dpd.SetThemeDark(modeDarkDate.Checked);
+                dpd.Vibrate(vibrateDate.Checked);
+
+                dpd.DismissOnPause(dismissDate.Checked);
+                dpd.ShowYearPickerFirst(showYearFirst.Checked);
+                dpd.SetVersion(showVersion2.Checked ? DatePickerDialog.Version.Version2 : DatePickerDialog.Version.Version1);
+                if (modeCustomAccentDate.Checked)
+                {
+                    dpd.AccentColor = Color.ParseColor("#9C27B0");
+                }
+                if (titleDate.Checked)
+                {
+                    dpd.SetTitle("DatePicker Title");
+                }
+                if (highlightDays.Checked)
+                {
+                    Calendar date1 = Calendar.Instance;
+                    Calendar date2 = Calendar.Instance;
+                    date2.Add(CalendarField.WeekOfMonth, -1);
+                    Calendar date3 = Calendar.Instance;
+                    date3.Add(CalendarField.WeekOfMonth, 1);
+                    Calendar[] days = { date1, date2, date3 };
+                    dpd.SetHighlightedDays(days);
+                }
+                if (limitSelectableDays.Checked)
+                {
+                    Calendar[] days = new Calendar[13];
+                    for (int i = -6; i < 7; i++)
+                    {
+                        Calendar day = Calendar.Instance;
+                        day.Add(CalendarField.DayOfMonth, i * 2);
+                        days[i + 6] = day;
+                    }
+                    dpd.SetSelectableDays(days);
+                }
+                if (switchOrientation.Checked)
+                {
+                    if (dpd.GetVersion() == DatePickerDialog.Version.Version1)
+                    {
+                        dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Horizontal);
+                    }
+                    else
+                    {
+                        dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Vertical);
+                    }
+                }
+                dpd.Show(base.FragmentManager, "Datepickerdialog");
             };
 
             return view;
@@ -87,24 +132,19 @@ namespace Nivaes.MaterialDataTimePicker.Droid
         public override void OnResume()
         {
             base.OnResume();
-            //DatePickerDialog dpd = (DatePickerDialog)base.FragmentManager.FindFragmentByTag("Datepickerdialog");
-            //if (dpd != null) dpd.SetOnDateSetListener(this);
+            DatePickerDialog dpd = (DatePickerDialog)base.FragmentManager.FindFragmentByTag("Datepickerdialog");
+            if (dpd != null) dpd.OnDateSetListener = this;
         }
 
-        void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
-        {
+        //void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
+        //{
 
-        }
+        //}
 
-        void Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener.OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+        void DatePickerDialog.IOnDateSetListener.OnDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth)
         {
             string date = "You picked the following date: " + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
             dateTextView.Text = date;
-        }
-
-        void DatePickerDialog.IOnDateSetListener.OnDateSet(DatePickerDialog p0, int p1, int p2, int p3)
-        {
-            throw new NotImplementedException();
         }
     }
 }
