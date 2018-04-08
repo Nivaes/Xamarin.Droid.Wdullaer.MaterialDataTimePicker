@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
-    <AssemblyName>AndroidMaterialDataTimePicker</AssemblyName>
+    <AssemblyName>Xamarin.Droid.MaterialDataTimePicker</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
@@ -51,18 +51,15 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.Design">
-      <Version>27.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v13">
-      <Version>27.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v4">
-      <Version>27.0.2</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
+    <PackageReference Include="Xamarin.Android.Support.v13" Version="27.0.2" />
+    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2" />
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="Jars\MaterialDateTimePicker-v3.5.2.aar" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MaterialDataTimePicker.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

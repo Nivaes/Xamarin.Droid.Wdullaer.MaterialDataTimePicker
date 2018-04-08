@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata>
+    <id>Nivaes.Xamarin.Droid.MaterialDateTimePicker</id>
+    <version>3.5.2.2</version>
+    <title>Xamarin.Bindings.MaterialDateTimePicker</title>
+    <authors>Nivaes Systems</authors>
+    <licenseUrl>http://opensource.org/licenses/ms-pl</licenseUrl>
+    <projectUrl>https://github.com/Nivaes/Xamarin.Droid.MaterialDataTimePicker</projectUrl>
+    <iconUrl>https://i.imgur.com/D3CfFea.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Binding library of https://github.com/wdullaer/MaterialDateTimePicker v3.5.2</description>
+    <tags>xamarin android monodroid xamarin.android DataPicker TimePicker</tags>
+
+    <dependencies>
+      <group targetFramework="monoandroid60">
+        <dependency id="Xamarin.Android.Support.Design" version="27.0.2" />
+        <dependency id="Xamarin.Android.Support.v13" version="27.0.2" />
+        <dependency id="Xamarin.Android.Support.v4" version="27.0.2" />
+      </group>
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="bin\Release\Xamarin.Droid.MaterialDataTimePicker.dll" target="lib\MonoAndroid\Xamarin.Droid.MaterialDataTimePicker.dll" />
+  </files>
+
+</package>
