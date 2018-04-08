@@ -67,7 +67,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release NuGet.exe pack "$(ProjectDir)MaterialDataTimePicker.nuspec"  -Prop Configuration=Release</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release NuGet.exe pack "$(ProjectDir)MaterialDataTimePicker.nuspec" -Prop Configuration=Release</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
