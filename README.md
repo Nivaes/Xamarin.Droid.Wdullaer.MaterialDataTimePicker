@@ -2,4 +2,4 @@
 Xamarin Android binding library for: https://github.com/wdullaer/MaterialDateTimePicker
 
 Get it on Nuget:
-https://www.nuget.org/packages/Nivaes.Droid.MaterialDateTimePicker/3.5.1.0
+https://www.nuget.org/packages/Nivaes.Droid.MaterialDateTimePicker
