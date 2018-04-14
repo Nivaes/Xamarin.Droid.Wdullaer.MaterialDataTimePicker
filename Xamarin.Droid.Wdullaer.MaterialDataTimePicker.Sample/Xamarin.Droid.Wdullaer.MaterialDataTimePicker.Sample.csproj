@@ -79,9 +79,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xamarin.Droid.MaterialDataTimePicker\Xamarin.Droid.MaterialDataTimePicker.csproj">
+    <ProjectReference Include="..\Xamarin.Droid.Wdullaer.MaterialDataTimePicker\Xamarin.Droid.Wdullaer.MaterialDataTimePicker.csproj">
       <Project>{647f59aa-4042-471b-9c5e-4a93b1aa4c68}</Project>
-      <Name>Xamarin.Droid.MaterialDataTimePicker</Name>
+      <Name>Xamarin.Droid.Wdullaer.MaterialDataTimePicker</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
