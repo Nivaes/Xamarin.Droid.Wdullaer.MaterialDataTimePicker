@@ -3,7 +3,7 @@
     <TargetFrameworks>MonoAndroid81</TargetFrameworks>
     <AssemblyName>Com.Wdullaer.MaterialDateTimePicker</AssemblyName>
     <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
-    <Description>Binding library of https://github.com/wdullaer/MaterialDateTimePicker v3.5.2</Description>
+    <Description>Binding library of https://github.com/wdullaer/MaterialDateTimePicker</Description>
     <PackageId>Nivaes.Droid.MaterialDateTimePicker</PackageId>
     <PackageTags>xamarin;android;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
     <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
