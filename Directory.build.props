@@ -13,7 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>3.5.2.5</Version>
+    <Version>3.5.2.6</Version>
 
     <LangVersion>latest</LangVersion>
     <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000</NoWarn>
