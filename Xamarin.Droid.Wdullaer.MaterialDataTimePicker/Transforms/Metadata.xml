@@ -3,15 +3,41 @@
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Date</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
 
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']/interface[@name='GravitySnapHelper.SnapListener']"/>
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;java.lang.Integer&gt;']]"/>-->
+    
+    -->
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>-->
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>-->
 
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
+
+    
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateSetListener']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.ScrollOrientation']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog.Version']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DayPickerView.OnPageListener']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthAdapter.CalendarDay']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DayPickerGroup']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='SimpleMonthView']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='YearPickerView']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='YearPickerView.YearAdapter']"/>
+    
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>-->
 
-    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p0']" name="name">callBack</attr>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='TimePickerDialog.1']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='TimePickerDialog.KeyboardListener']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='TimePickerDialog.Node']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerDialog.OnTimeSetListener']"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='TimePickerDialog.Version']"/>
+
+    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']" name="visibility">public</attr>
+    
+    <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p0']" name="name">callBack</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p1']" name="name">year</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p2']" name="name">monthOfYear</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p3']" name="name">dayOfMonth</attr>
@@ -32,7 +58,7 @@
     <attr path ="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerDialog.OnTimeSetListener']/method[@name='onTimeSet' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.TimePickerDialog'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p2']" name="name">minute</attr>
     <attr path ="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerDialog.OnTimeSetListener']/method[@name='onTimeSet' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.TimePickerDialog'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p3']" name="name">second</attr>
 
-    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']" name="visibility">public</attr>
+   <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerController']" name="visibility">public</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='compareTo' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.Timepoint']]/parameter[1]"
          name="managedType">
         Java.Lang.Object
@@ -127,6 +153,6 @@
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='equals' and count(parameter)=2 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.Timepoint'] and parameter[2][@type='com.wdullaer.materialdatetimepicker.time.Timepoint.TYPE']]/parameter[@name='p1']" name="name">resolution</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='get' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.Timepoint.TYPE']]/parameter[@name='p0']" name="name">type</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]/parameter[@name='p0']" name="name">out</attr>
-    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]/parameter[@name='p1']" name="name">flags</attr>
+    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']/method[@name='writeToParcel' and count(parameter)=2 and parameter[1][@type='android.os.Parcel'] and parameter[2][@type='int']]/parameter[@name='p1']" name="name">flags</attr>-->
 
 </metadata>

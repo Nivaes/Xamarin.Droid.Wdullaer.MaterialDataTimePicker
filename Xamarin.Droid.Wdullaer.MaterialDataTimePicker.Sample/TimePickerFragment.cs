@@ -1,14 +1,14 @@
-﻿using System;
-using Android.Graphics;
-using Android.OS;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
-using Com.Wdullaer.MaterialDateTimePicker.Time;
-using Java.Util;
-
-namespace Nivaes.MaterialDataTimePicker.Droid
+﻿namespace Nivaes.MaterialDataTimePicker.Droid
 {
+    using System;
+    using Android.Graphics;
+    using Android.OS;
+    using Android.Util;
+    using Android.Views;
+    using Android.Widget;
+    using Com.Wdullaer.MaterialDateTimePicker.Time;
+    using Java.Util;
+
     public class TimePickerFragment : Android.App.Fragment, Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener
     {
         private TextView timeTextView;

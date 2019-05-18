@@ -1,14 +1,16 @@
-﻿namespace Com.Wdullaer.MaterialDateTimePicker.Date
-{
-    public partial class DatePickerDialog
-    {
-        public DatePickerDialog(global::Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth)
-        {
-            Initialize(callBack, year, monthOfYear, dayOfMonth);
-        }
+﻿//namespace Com.Wdullaer.MaterialDateTimePicker.Date
+//{
+//    using Android.Support.V7.App;
 
-        DatePickerDialog.ScrollOrientation IDatePickerController.ScrollOrientation => GetScrollOrientation();
+//    public partial class DatePickerDialog : AppCompatDialogFragment
+//    {
+//        public DatePickerDialog(global::Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth)
+//        {
+//            Initialize(callBack, year, monthOfYear, dayOfMonth);
+//        }
 
-        DatePickerDialog.Version IDatePickerController.Version => GetVersion();
-    }
-}
+//        DatePickerDialog.ScrollOrientation IDatePickerController.ScrollOrientation => GetScrollOrientation();
+
+//        DatePickerDialog.Version IDatePickerController.Version => GetVersion();
+//    }
+//}

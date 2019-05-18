@@ -1,13 +1,12 @@
-﻿using Android.Graphics;
-using Android.OS;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
-using Com.Wdullaer.MaterialDateTimePicker.Date;
-using Java.Util;
-
-namespace Nivaes.MaterialDataTimePicker.Droid
+﻿namespace Nivaes.MaterialDataTimePicker.Droid
 {
+    using Android.Graphics;
+    using Android.OS;
+    using Android.Util;
+    using Android.Views;
+    using Android.Widget;
+    using Java.Util;
+
     public class DatePickerFragment : Android.App.Fragment, Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener
     {
         private TextView dateTextView;
