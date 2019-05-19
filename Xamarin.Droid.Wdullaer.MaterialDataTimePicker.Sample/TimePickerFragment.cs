@@ -9,7 +9,7 @@
     using Com.Wdullaer.MaterialDateTimePicker.Time;
     using Java.Util;
 
-    public class TimePickerFragment : Android.App.Fragment, Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener
+    public class TimePickerFragment : Android.App.Fragment, TimePickerDialog.IOnTimeSetListener
     {
         private TextView timeTextView;
         private CheckBox mode24Hours;
@@ -22,7 +22,7 @@
         private CheckBox limitSelectableTimes;
         private CheckBox disableSpecificTimes;
         private CheckBox showVersion2;
-        private Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog tpd;
+        private TimePickerDialog tpd;
 
         public TimePickerFragment()
         {
@@ -65,7 +65,7 @@
             timeButton.Click += (o, e) =>
             {
                 Calendar now = Calendar.Instance;
-                tpd = new Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog(this, now.Get(CalendarField.HourOfDay), now.Get(CalendarField.Minute), now.Get(CalendarField.Second), mode24Hours.Checked);
+                tpd = new TimePickerDialog(this, now.Get(CalendarField.HourOfDay), now.Get(CalendarField.Minute), now.Get(CalendarField.Second), mode24Hours.Checked);
 
                 tpd.SetThemeDark(modeDarkTime.Checked);
                 tpd.Vibrate(vibrateTime.Checked);

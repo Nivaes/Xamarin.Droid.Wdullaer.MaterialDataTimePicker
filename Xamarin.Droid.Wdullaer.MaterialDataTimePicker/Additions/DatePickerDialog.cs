@@ -7,10 +7,10 @@
 
     public partial class DatePickerDialog 
     {
-        //public DatePickerDialog(IOnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth)
-        //{
-        //    Initialize(callBack, year, monthOfYear, dayOfMonth);
-        //}
+        public DatePickerDialog(IOnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth)
+        {
+            Initialize(callBack, year, monthOfYear, dayOfMonth);
+        }
 
         //DatePickerDialog.ScrollOrientation IDatePickerController.ScrollOrientation => GetScrollOrientation();
 
