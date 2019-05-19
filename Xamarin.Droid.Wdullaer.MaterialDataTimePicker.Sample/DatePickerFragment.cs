@@ -5,9 +5,10 @@
     using Android.Util;
     using Android.Views;
     using Android.Widget;
+    using Com.Wdullaer.MaterialDateTimePicker.Date;
     using Java.Util;
 
-    public class DatePickerFragment : Android.App.Fragment, Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener
+    public class DatePickerFragment : Android.App.Fragment, DatePickerDialog.IOnDateSetListener
     {
         private TextView dateTextView;
         private CheckBox modeDarkDate;
@@ -20,7 +21,7 @@
         private CheckBox switchOrientation;
         private CheckBox limitSelectableDays;
         private CheckBox highlightDays;
-        private Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog dpd;
+        private DatePickerDialog dpd;
 
         public DatePickerFragment()
         {
@@ -65,7 +66,7 @@
             {
                 Calendar now = Calendar.Instance;
 
-                dpd = new Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog(this, now.Get(CalendarField.Year), now.Get(CalendarField.Month), now.Get(CalendarField.DayOfMonth));
+                dpd = new DatePickerDialog(this, now.Get(CalendarField.Year), now.Get(CalendarField.Month), now.Get(CalendarField.DayOfMonth));
 
                 dpd.SetThemeDark(modeDarkDate.Checked);
                 dpd.Vibrate(vibrateDate.Checked);

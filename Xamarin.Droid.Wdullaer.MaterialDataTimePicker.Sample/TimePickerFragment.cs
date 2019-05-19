@@ -129,7 +129,7 @@
             if (tpd != null) tpd.OnTimeSetListener = this;
         }
 
-        void Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener.OnTimeSet(Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog view, int hourOfDay, int minute, int second)
+        void TimePickerDialog.IOnTimeSetListener.OnTimeSet(Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog view, int hourOfDay, int minute, int second)
         {
             String hourString = hourOfDay < 10 ? "0" + hourOfDay : "" + hourOfDay;
             String minuteString = minute < 10 ? "0" + minute : "" + minute;

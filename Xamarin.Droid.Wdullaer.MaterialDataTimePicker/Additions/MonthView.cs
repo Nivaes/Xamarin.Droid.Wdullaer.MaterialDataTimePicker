@@ -1,12 +1,13 @@
-﻿//using System;
-//using Android.Runtime;
+﻿namespace Com.Wdullaer.MaterialDateTimePicker.Date
+{
+    using System;
+    using Android.Runtime;
+    using Android.Support.V7.Widget;
 
-//namespace Com.Wdullaer.MaterialDateTimePicker.Date
-//{
-//    public abstract partial class MonthView
-//    {
-//        protected internal partial class MonthViewTouchHelper
-//        {
+    public abstract partial class MonthView
+    {
+        //protected internal partial class MonthViewTouchHelper 
+        //{
 //            static Delegate cb_getVisibleVirtualViews_Ljava_util_List_;
 //#pragma warning disable 0169
 //            static Delegate GetGetVisibleVirtualViews_Ljava_util_List_Handler()
@@ -47,7 +48,7 @@
 //                    JNIEnv.DeleteLocalRef(native_p0);
 //                }
 //            }
-//        }
-//    }
+        //}
+    }
 
-//}
+}

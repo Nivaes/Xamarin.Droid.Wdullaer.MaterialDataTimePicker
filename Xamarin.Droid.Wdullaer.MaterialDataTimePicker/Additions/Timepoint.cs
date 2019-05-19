@@ -4,7 +4,7 @@
     {
         public int CompareTo(Java.Lang.Object o)
         {
-            return CompareTo((global::Com.Wdullaer.MaterialDateTimePicker.Time.Timepoint) o);
+            return CompareTo((global::Com.Wdullaer.MaterialDateTimePicker.Time.Timepoint)o);
         }
     }
 }

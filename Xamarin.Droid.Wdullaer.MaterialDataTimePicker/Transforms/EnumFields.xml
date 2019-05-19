@@ -1,14 +1,11 @@
 ﻿<enum-field-mappings>
-  <!--
-  This example converts the constants Fragment_id, Fragment_name,
-  and Fragment_tag from android.support.v4.app.FragmentActivity.FragmentTag
-  to an enum called Android.Support.V4.App.FragmentTagType with values
-  Id, Name, and Tag.
-  
-  <mapping jni-class="android/support/v4/app/FragmentActivity$FragmentTag" clr-enum-type="Android.Support.V4.App.FragmentTagType">
-    <field jni-name="Fragment_name" clr-name="Name" value="0" />
-    <field jni-name="Fragment_id" clr-name="Id" value="1" />
-    <field jni-name="Fragment_tag" clr-name="Tag" value="2" />
-  </mapping>
-  -->
+    <!--<mapping jni-class="com/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialogVersion">
+        <field jni-name="VERSION_1" clr-name="Version1" value="0" />
+        <field jni-name="VERSION_2" clr-name="Version2" value="1" />
+    </mapping>
+
+    <mapping jni-class="com/wdullaer/materialdatetimepicker/date/DatePickerDialog$ScrollOrientation" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialogScrollOrientation">
+        <field jni-name="HORIZONTAL" clr-name="Horizontal" value="0" />
+        <field jni-name="VERTICAL" clr-name="Vertical" value="1" />
+    </mapping>-->
 </enum-field-mappings>
