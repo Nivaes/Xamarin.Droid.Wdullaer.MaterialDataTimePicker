@@ -42,10 +42,6 @@
             <implements
                 name="com.wdullaer.materialdatetimepicker.date.DatePickerController"
                 name-generic-aware="com.wdullaer.materialdatetimepicker.date.DatePickerController" />
-            <!--<implements
-                name="com.wdullaer.materialdatetimepicker.date.DatePickerController"
-                name-generic-aware="com.wdullaer.materialdatetimepicker.date.DatePickerController"
-                jni-type="Lcom/wdullaer/materialdatetimepicker/date/DatePickerController;" />-->
 
             <method abstract="false" deprecated="not deprecated" final="false" name="newInstance" bridge="false" native="false" return="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog" static="true" synchronized="false" synthetic="false" visibility="public">
                 <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener" />
@@ -77,6 +73,22 @@
 
             <method abstract="false" deprecated="not deprecated" final="false" name="onClick" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
                 <parameter name="v" type="android.view.View" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="setThemeDark" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="themeDark" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="vibrate" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="dismissOnPause" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="showYearPickerFirst" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
             </method>
         </class>
 
@@ -121,7 +133,32 @@
             <method abstract="false" deprecated="not deprecated" final="false" name="onValueSelected" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
                 <parameter name="newValue" type="com.wdullaer.materialdatetimepicker.time.Timepoint" />
             </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="setThemeDark" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="themeDark" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="vibrate" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="dismissOnPause" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="setVersion" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="Version" type="Version" />
+            </method>
         </class>
+
+        <interface abstract="true" deprecated="not deprecated" final="false" name="TimePickerDialog.OnTimeSetListener" static="true" visibility="public">
+            <method abstract="true" deprecated="not deprecated" final="false" name="onTimeSet" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="view" type="Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog" />
+                <parameter name="hourOfDay" type="int" />
+                <parameter name="minute" type="int" />
+                <parameter name="second" type="int" />
+            </method>
+        </interface>
     </add-node>
 
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']" name="name">IOnDayClickListener</attr>
