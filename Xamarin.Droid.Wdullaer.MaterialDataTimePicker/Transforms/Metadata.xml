@@ -30,6 +30,12 @@
 
     <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']" name="visibility">public</attr>-->
 
+    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']">
+        <class abstract="false" deprecated="not deprecated" final="false" name="GravitySnapHelper" static="true" visibility="public"
+               extends="android.support.v7.widget.LinearSnapHelper">
+        </class>
+    </add-node>
+    
     <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']">
         <interface abstract="true" deprecated="not deprecated" final="false" name="DatePickerController" static="true" visibility="public">
         </interface>
