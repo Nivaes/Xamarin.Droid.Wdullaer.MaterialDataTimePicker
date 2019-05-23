@@ -1,8 +1,8 @@
 ﻿<enum-field-mappings>
-    <mapping jni-class="com/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.Version">
+    <!--<mapping jni-class="com/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.Version">
         <field jni-name="VERSION_1" clr-name="Version1" value="0" />
         <field jni-name="VERSION_2" clr-name="Version2" value="1" />
-    </mapping>
+    </mapping>-->
 
     <!--<mapping jni-class="com/wdullaer/materialdatetimepicker/date/DatePickerDialog$ScrollOrientation" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialogScrollOrientation">
         <field jni-name="HORIZONTAL" clr-name="Horizontal" value="0" />

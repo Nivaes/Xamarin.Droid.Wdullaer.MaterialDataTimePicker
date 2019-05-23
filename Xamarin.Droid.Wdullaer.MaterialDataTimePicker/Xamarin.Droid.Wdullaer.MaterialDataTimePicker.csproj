@@ -1,31 +1,25 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
     <TargetFramework>MonoAndroid90</TargetFramework>
-  </PropertyGroup>
 
-  <PropertyGroup>
     <AssemblyName>Com.Wdullaer.MaterialDateTimePicker</AssemblyName>
     <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
     <Description>Binding library of https://github.com/wdullaer/MaterialDateTimePicker</Description>
     <PackageId>Nivaes.Droid.Wdullaer.MaterialDateTimePicker</PackageId>
     <PackageTags>xamarin;android;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
     <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
-  </PropertyGroup>
 
-  <PropertyGroup>
     <IsBindingProject>true</IsBindingProject>
-    <!--<AndroidClassParser>class-parse</AndroidClassParser>-->
-    <AndroidClassParser>jar2xml</AndroidClassParser>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
-    <AndroidClassParser>jar2xml</AndroidClassParser>
-    <!--<AndroidClassParser>class-parse</AndroidClassParser>-->
+    <AndroidClassParser>class-parse</AndroidClassParser>
+    <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
   </PropertyGroup>
  
   <ItemGroup>
-    <None Include="Resources\*.cs" />
-    <Compile Remove="Resources\*.cs" />
+    <None Include="Resources\**\*.cs" />
+    <Compile Remove="Resources\**\*.cs" />
     <AndroidResource Include="Resources\**\*.xml" Generator="MSBuild:UpdateAndroidResources" />
     <LibraryProjectZip Include="Jars\*.aar" />
     <TransformFile Include="Transforms\*.xml" />
