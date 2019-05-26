@@ -14,13 +14,4 @@
     <attr path="/api/package[@name='androidx.appcompat.widget']/class[@name='ActionBarContainer']/method[@name='onLayout' and count(parameter)=5 and parameter[1][@type='boolean'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]" name="visibility">protected</attr>
     <attr path="/api/package[@name='androidx.appcompat.view.menu']/interface[@name='MenuHelper']" name="managedName">IMenuHelper</attr>
     <attr path="/api/package[@name='androidx.appcompat.view.menu']/interface[@name='MenuHelper']" name="visibility">true</attr>
-
-    <!--<add-node path="/api/package[@name='androidx.appcompat.view']/class[@name='SupportActionModeWrapper']">
-        <method abstract="false" deprecated="not deprecated" final="false" name="setTitleFormatted" jni-signature="(Ljava/lang/CharSequence;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
-            <parameter name="subtitle" type="java.lang.CharSequence" jni-type="Ljava/lang/CharSequence;"></parameter>
-        </method>
-        <method abstract="false" deprecated="not deprecated" final="false" name="setSubtitleFormatted" jni-signature="(Ljava/lang/CharSequence;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
-            <parameter name="subtitle" type="java.lang.CharSequence" jni-type="Ljava/lang/CharSequence;"></parameter>
-        </method>
-    </add-node>-->
 </metadata>
