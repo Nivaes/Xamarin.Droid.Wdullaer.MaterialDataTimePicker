@@ -6,11 +6,11 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public partial class BaseMenuPresenter
+    public partial class ListMenuItemView
     {
-        void IMenuPresenter.SetCallback(IMenuPresenterCallback callback)
+        void IMenuViewItemView.SetEnabled(bool enable)
         {
-            Callback = callback;
+            Enabled = enable;
         }
     }
 }
