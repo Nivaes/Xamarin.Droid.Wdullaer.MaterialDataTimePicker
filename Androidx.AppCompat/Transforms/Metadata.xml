@@ -1,0 +1,43 @@
+﻿<metadata>
+    <attr path="/api/package[@name='androidx.appcompat.app']" name="managedName">AndroidX.AppCompat.App</attr>
+    <attr path="/api/package[@name='androidx.appcompat.content.res']" name="managedName">AndroidX.AppCompat.Content.Res</attr>
+    <attr path="/api/package[@name='androidx.appcompat.graphics.drawable']" name="managedName">AndroidX.AppCompat.Graphics.Drawable</attr>
+    <attr path="/api/package[@name='androidx.appcompat.text']" name="managedName">AndroidX.AppCompat.Text</attr>
+    <attr path="/api/package[@name='androidx.appcompat.view']" name="managedName">AndroidX.AppCompat.View</attr>
+    <attr path="/api/package[@name='androidx.appcompat.view.menu']" name="managedName">AndroidX.AppCompat.View.Menu</attr>
+    <attr path="/api/package[@name='androidx.appcompat.widget']" name="managedName">AndroidX.AppCompat.Widget</attr>
+
+    <attr path="/api/package[@name='androidx.appcompat.widget']/class[@name='ActionBarContainer']/method[@name='onLayout' and count(parameter)=5 and parameter[1][@type='boolean'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]" name="visibility">protected</attr>
+    <attr path="/api/package[@name='androidx.appcompat.widget']/class[@name='ActionBarContextView']/method[@name='setVisibility' and count(parameter)=1 and parameter[1][@type='int']]" name="visibility">protected</attr>
+
+    <attr path="/api/package[@name='androidx.appcompat.graphics.drawable']/class[@name='AnimatedStateListDrawableCompat']/method[@name='getChangingConfigurations' and count(parameter)=0]" name="return" >Android.Content.PM.ConfigChanges</attr>
+    
+    <!--<attr path="/api/package[@name='androidx.appcompat.graphics.drawable']/class[@name='AnimatedStateListDrawableCompat']/method[@name='getConstantState' and count(parameter)=0]" name="managedName">GetConstantState</attr>-->
+
+    <remove-node path="/api/package[@name='androidx.appcompat.widget']/class[@name='MenuPopupWindow.MenuDropDownListView']/method[@name='setSelector' and count(parameter)=1 and parameter[1][@type='android.graphics.drawable.Drawable']]" />
+
+    <!--<attr path="/api/package[@name='androidx.appcompat.view.menu']/class[@name='BaseMenuPresenter']/method[@name='getId' and count(parameter)=0]" name="managedName">Id</attr>
+    <attr path="/api/package[@name='androidx.appcompat.view.menu']/class[@name='BaseMenuPresenter']/method[@name='setId' and count(parameter)=1 and parameter[1][@type='int']]" name="managedName">Id</attr>-->
+    <!--<attr path="/api/package[@name='androidx.appcompat.view.menu']/class[@name='BaseMenuPresenter']/method[@name='flagActionItems' and count(parameter)=0]" name="managedName">FlagActionItems</attr>
+    <attr path="/api/package[@name='androidx.appcompat.view.menu']/class[@name='BaseMenuPresenter']/method[@name='getMenuView' and count(parameter)=1 and parameter[1][@type='android.view.ViewGroup']]" name="managedName">GetMenuView</attr>
+    <attr path="/api/package[@name='androidx.appcompat.view.menu']/interface[@name='MenuPresenter']/method[@name='onRestoreInstanceState' and count(parameter)=1 and parameter[1][@type='android.os.Parcelable']]" name="managedName">OnRestoreInstanceState</attr>
+    <attr path="/api/package[@name='androidx.appcompat.view.menu']/interface[@name='MenuPresenter']/method[@name='onSaveInstanceState' and count(parameter)=0]" name="managedName">OnSaveInstanceState</attr>-->
+    <attr path="/api/package[@name='androidx.appcompat.view.menu']/class[@name='BaseMenuPresenter']/method[@name='setCallback' and count(parameter)=1 and parameter[1][@type='androidx.appcompat.view.menu.MenuPresenter.Callback']]" name="managedName">SetCallback</attr>
+    <!--<attr path="/api/package[@name='androidx.appcompat.view.menu']/class[@name='BaseMenuPresenter']/method[@name='updateMenuView' and count(parameter)=1 and parameter[1][@type='boolean']]" name="managedName">UpdateMenuView</attr>-->
+
+    <add-node path="/api/package[@name='androidx/appcompat/view/SupportActionModeWrapper']">
+        <!--<method abstract="false" deprecated="not deprecated" final="false" name="setTitle" jni-signature="(Ljava/lang/CharSequence;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+            <parameter name="subtitle" type="java.lang.CharSequence" jni-type="Ljava/lang/CharSequence;"></parameter>
+        </method>
+        <method abstract="false" deprecated="not deprecated" final="false" name="setSubtitle" jni-signature="(Ljava/lang/CharSequence;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+            <parameter name="subtitle" type="java.lang.CharSequence" jni-type="Ljava/lang/CharSequence;"></parameter>
+        </method>-->
+
+        <method abstract="false" deprecated="not deprecated" final="false" name="setTitleFormatted" jni-signature="(Ljava/lang/CharSequence;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+            <parameter name="subtitle" type="java.lang.CharSequence" jni-type="Ljava/lang/CharSequence;"></parameter>
+        </method>
+        <method abstract="false" deprecated="not deprecated" final="false" name="setSubtitleFormatted" jni-signature="(Ljava/lang/CharSequence;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+            <parameter name="subtitle" type="java.lang.CharSequence" jni-type="Ljava/lang/CharSequence;"></parameter>
+        </method>
+    </add-node>
+</metadata>

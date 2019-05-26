@@ -49,7 +49,8 @@
             <field deprecated="not deprecated" final="true" name="VERSION_2" static="true" transient="false" type="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" type-generic-aware="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" visibility="public" volatile="false"></field>
         </class>
         
-        <class abstract="false" deprecated="not deprecated" final="false" name="DatePickerDialog" static="true" visibility="public" extends="android.support.v7.app.AppCompatDialogFragment">
+        <class abstract="false" deprecated="not deprecated" final="false" name="DatePickerDialog" static="true" visibility="public"
+               extends="androidx.appcompat.app.AppCompatDialogFragment">
             <implements
                 name="android.view.View.OnClickListener"
                 name-generic-aware="android.view.View.OnClickListener"
@@ -189,8 +190,6 @@
             </method>
         </interface>
     </add-node>
-
-    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='MonthView.OnDayClickListener']" name="name">IOnDayClickListener</attr>
 
     <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p0']" name="name">callBack</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='initialize' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[@name='p1']" name="name">year</attr>

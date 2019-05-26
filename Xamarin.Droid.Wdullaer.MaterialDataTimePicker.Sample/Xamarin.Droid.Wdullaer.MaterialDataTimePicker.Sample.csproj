@@ -82,12 +82,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xamarin.Droid.Wdullaer.MaterialDataTimePicker\Xamarin.Droid.Wdullaer.MaterialDataTimePicker.csproj">
-      <Project>{647f59aa-4042-471b-9c5e-4a93b1aa4c68}</Project>
-      <Name>Xamarin.Droid.Wdullaer.MaterialDataTimePicker</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-w820dp\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Xamarin.Droid.ProlificInteractive.MaterialCalendarView\Xamarin.Droid.ProlificInteractive.MaterialCalendarView\Xamarin.Droid.ProlificInteractive.MaterialCalendarView.csproj">
+      <Project>{919a147f-aa4d-4c5b-839c-c6f004c10eee}</Project>
+      <Name>Xamarin.Droid.ProlificInteractive.MaterialCalendarView</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
