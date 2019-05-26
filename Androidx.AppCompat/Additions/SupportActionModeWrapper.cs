@@ -1,12 +1,21 @@
 ﻿namespace AndroidX.AppCompat.View
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Java.Lang;
 
     public partial class SupportActionModeWrapper
     {
+        //public override ICharSequence SubtitleFormatted
+        //{
+        //    set => SetSubtitle
+        //    set => SetSubtitleFormatted(value);
+        //}
+
+        //public override ICharSequence TitleFormatted { set => SetTitleFormatted(value); }
+
+        //public override ICharSequence SubtitleFormatted
+        //{
+        //    get => null;
+        //    set => void;
+        //}
     }
 }

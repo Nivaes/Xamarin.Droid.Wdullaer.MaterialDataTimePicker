@@ -26,10 +26,6 @@
   </ItemGroup>
  
   <ItemGroup>
-    <Folder Include="Additions\" />
-  </ItemGroup>
- 
-  <ItemGroup>
     <ProjectReference Include="..\Androidx.AppCompat\Androidx.AppCompat.csproj" />
     <ProjectReference Include="..\Androidx.RecyclerView\Androidx.RecyclerView.csproj" />
   </ItemGroup>
