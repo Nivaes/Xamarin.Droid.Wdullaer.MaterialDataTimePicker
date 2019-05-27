@@ -1,10 +1,12 @@
 ﻿namespace Com.Wdullaer.MaterialDateTimePicker.Time
 {
+    using Java.Lang;
+
     public partial class Timepoint
     {
-        public int CompareTo(Java.Lang.Object o)
+        int IComparable.CompareTo(Object o)
         {
-            return CompareTo((global::Com.Wdullaer.MaterialDateTimePicker.Time.Timepoint)o);
+            return CompareTo((Timepoint)o);
         }
     }
 }

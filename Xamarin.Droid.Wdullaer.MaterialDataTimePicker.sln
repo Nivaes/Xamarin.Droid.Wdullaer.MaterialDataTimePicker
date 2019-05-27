@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Androidx.AppCompat", "Androidx.AppCompat\Androidx.AppCompat.csproj", "{A259CE60-575E-4597-8998-741E659763F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Androidx.RecyclerView", "Androidx.RecyclerView\Androidx.RecyclerView.csproj", "{BB5AD838-C7D2-4A0E-956F-AE8BD75C59B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +34,14 @@ Global
 		{5D4AA5FE-76B6-42DC-9FB5-159B3B07F7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D4AA5FE-76B6-42DC-9FB5-159B3B07F7F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D4AA5FE-76B6-42DC-9FB5-159B3B07F7F3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A259CE60-575E-4597-8998-741E659763F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A259CE60-575E-4597-8998-741E659763F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A259CE60-575E-4597-8998-741E659763F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A259CE60-575E-4597-8998-741E659763F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5AD838-C7D2-4A0E-956F-AE8BD75C59B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5AD838-C7D2-4A0E-956F-AE8BD75C59B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5AD838-C7D2-4A0E-956F-AE8BD75C59B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5AD838-C7D2-4A0E-956F-AE8BD75C59B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

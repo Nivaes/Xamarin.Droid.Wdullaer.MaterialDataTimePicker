@@ -70,41 +70,41 @@
                 tpd.SetThemeDark(modeDarkTime.Checked);
                 tpd.Vibrate(vibrateTime.Checked);
                 tpd.DismissOnPause(dismissTime.Checked);
-                tpd.EnableSeconds(enableSeconds.Checked);
-                tpd.SetVersion(showVersion2.Checked ? TimePickerDialog.Version.Version2 : TimePickerDialog.Version.Version1);
-                if (modeCustomAccentTime.Checked)
-                {
-                    tpd.AccentColor = Color.ParseColor("#9C27B0");
-                }
-                if (titleTime.Checked)
-                {
-                    tpd.Title = "TimePicker Title";
-                }
-                if (limitSelectableTimes.Checked)
-                {
-                    if (enableSeconds.Checked)
-                    {
-                        tpd.SetTimeInterval(3, 5, 10);
-                    }
-                    else
-                    {
-                        tpd.SetTimeInterval(3, 5, 60);
-                    }
-                }
-                if (disableSpecificTimes.Checked)
-                {
-                    Timepoint[] disabledTimes = {
-                            new Timepoint(10),
-                            new Timepoint(10, 30),
-                            new Timepoint(11),
-                            new Timepoint(12, 30)
-                    };
-                    tpd.SetDisabledTimes(disabledTimes);
-                }
-                tpd.TimeSet += (oo, ee) =>
-                {
+                //tpd.EnableSeconds(enableSeconds.Checked);
+                //tpd.SetVersion(showVersion2.Checked ? TimePickerDialog.Version.Version2 : TimePickerDialog.Version.Version1);
+                //if (modeCustomAccentTime.Checked)
+                //{
+                //    tpd.AccentColor = Color.ParseColor("#9C27B0");
+                //}
+                //if (titleTime.Checked)
+                //{
+                //    tpd.Title = "TimePicker Title";
+                //}
+                //if (limitSelectableTimes.Checked)
+                //{
+                //    if (enableSeconds.Checked)
+                //    {
+                //        tpd.SetTimeInterval(3, 5, 10);
+                //    }
+                //    else
+                //    {
+                //        tpd.SetTimeInterval(3, 5, 60);
+                //    }
+                //}
+                //if (disableSpecificTimes.Checked)
+                //{
+                //    Timepoint[] disabledTimes = {
+                //            new Timepoint(10),
+                //            new Timepoint(10, 30),
+                //            new Timepoint(11),
+                //            new Timepoint(12, 30)
+                //    };
+                //    tpd.SetDisabledTimes(disabledTimes);
+                //}
+                //tpd.TimeSet += (oo, ee) =>
+                //{
 
-                };
+                //};
 
                 //tpd.SetOnCancelListener()
 
@@ -115,7 +115,7 @@
                 //    Log.d("TimePicker", "Dialog was cancelled");
                 //}
                 //});
-                tpd.Show(base.FragmentManager, "Timepickerdialog");
+                //tpd.Show(base.FragmentManager, "Timepickerdialog");
             };
 
             return view;
@@ -125,8 +125,8 @@
         {
             base.OnResume();
 
-            TimePickerDialog tpd = (TimePickerDialog)base.FragmentManager.FindFragmentByTag("Timepickerdialog");
-            if (tpd != null) tpd.OnTimeSetListener = this;
+            //TimePickerDialog tpd = (TimePickerDialog)base.FragmentManager.FindFragmentByTag("Timepickerdialog");
+            //if (tpd != null) tpd.OnTimeSetListener = this;
         }
 
         void TimePickerDialog.IOnTimeSetListener.OnTimeSet(Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog view, int hourOfDay, int minute, int second)

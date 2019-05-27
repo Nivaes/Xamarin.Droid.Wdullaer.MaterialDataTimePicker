@@ -1,0 +1,6 @@
+﻿<enum-method-mappings>
+    <!--<mapping jni-class="com/wdullaer/materialdatetimepicker/date/DatePickerController">
+        <method jni-name="getVersion" parameter="return" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialogVersion" />
+        <method jni-name="getScrollOrientation" parameter="return" clr-enum-type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialogScrollOrientation" />
+    </mapping>-->
+</enum-method-mappings>

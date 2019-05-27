@@ -2,10 +2,10 @@
   <PropertyGroup>
     <TargetFramework>MonoAndroid90</TargetFramework>
 
-    <AssemblyName>Com.Wdullaer.MaterialDateTimePicker</AssemblyName>
-    <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
+    <AssemblyName>Androidx.AppCompat</AssemblyName>
+    <RootNamespace>Androidx.AppCompat</RootNamespace>
     <Description>Binding library of https://github.com/wdullaer/MaterialDateTimePicker</Description>
-    <PackageId>Nivaes.Droid.Wdullaer.MaterialDateTimePicker</PackageId>
+    <PackageId>Nivaes.Droid.Androidx.AppCompat</PackageId>
     <PackageTags>xamarin;android;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
     <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
 
@@ -15,6 +15,7 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
+    <Version>1.1.0.0</Version>
   </PropertyGroup>
  
   <ItemGroup>
@@ -24,10 +25,5 @@
     <LibraryProjectZip Include="Jars\*.aar" />
     <TransformFile Include="Transforms\*.xml" />
   </ItemGroup>
- 
-  <ItemGroup>
-    <ProjectReference Include="..\Androidx.AppCompat\Androidx.AppCompat.csproj" />
-    <ProjectReference Include="..\Androidx.RecyclerView\Androidx.RecyclerView.csproj" />
-  </ItemGroup>
- 
+  
 </Project>

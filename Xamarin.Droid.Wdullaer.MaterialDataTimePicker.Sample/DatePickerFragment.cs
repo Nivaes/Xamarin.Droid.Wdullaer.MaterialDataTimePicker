@@ -74,52 +74,52 @@
                 dpd.DismissOnPause(dismissDate.Checked);
                 dpd.ShowYearPickerFirst(showYearFirst.Checked);
                 dpd.SetVersion(showVersion2.Checked ? DatePickerDialog.Version.Version2 : DatePickerDialog.Version.Version1);
-                if (modeCustomAccentDate.Checked)
-                {
-                    dpd.AccentColor = Color.ParseColor("#9C27B0");
-                }
-                if (titleDate.Checked)
-                {
-                    dpd.SetTitle("DatePicker Title");
-                }
-                if (highlightDays.Checked)
-                {
-                    Calendar date1 = Calendar.Instance;
-                    Calendar date2 = Calendar.Instance;
-                    date2.Add(CalendarField.WeekOfMonth, -1);
-                    Calendar date3 = Calendar.Instance;
-                    date3.Add(CalendarField.WeekOfMonth, 1);
-                    Calendar[] days = { date1, date2, date3 };
-                    dpd.SetHighlightedDays(days);
-                }
-                if (limitSelectableDays.Checked)
-                {
-                    Calendar[] days = new Calendar[13];
-                    for (int i = -6; i < 7; i++)
-                    {
-                        Calendar day = Calendar.Instance;
-                        day.Add(CalendarField.DayOfMonth, i * 2);
-                        days[i + 6] = day;
-                    }
-                    dpd.SetSelectableDays(days);
-                }
-                if (switchOrientation.Checked)
-                {
-                    if (dpd.GetVersion() == DatePickerDialog.Version.Version1)
-                    {
-                        dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Horizontal);
-                    }
-                    else
-                    {
-                        dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Vertical);
-                    }
-                }
-                dpd.DateSet += (oo, ee) =>
-                {
+            //    if (modeCustomAccentDate.Checked)
+            //    {
+            //        dpd.AccentColor = Color.ParseColor("#9C27B0");
+            //    }
+            //    if (titleDate.Checked)
+            //    {
+            //        dpd.SetTitle("DatePicker Title");
+            //    }
+            //    if (highlightDays.Checked)
+            //    {
+            //        Calendar date1 = Calendar.Instance;
+            //        Calendar date2 = Calendar.Instance;
+            //        date2.Add(CalendarField.WeekOfMonth, -1);
+            //        Calendar date3 = Calendar.Instance;
+            //        date3.Add(CalendarField.WeekOfMonth, 1);
+            //        Calendar[] days = { date1, date2, date3 };
+            //        dpd.SetHighlightedDays(days);
+            //    }
+            //    if (limitSelectableDays.Checked)
+            //    {
+            //        Calendar[] days = new Calendar[13];
+            //        for (int i = -6; i < 7; i++)
+            //        {
+            //            Calendar day = Calendar.Instance;
+            //            day.Add(CalendarField.DayOfMonth, i * 2);
+            //            days[i + 6] = day;
+            //        }
+            //        dpd.SetSelectableDays(days);
+            //    }
+            //    if (switchOrientation.Checked)
+            //    {
+            //        if (dpd.GetVersion() == DatePickerDialog.Version.Version1)
+            //        {
+            //            dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Horizontal);
+            //        }
+            //        else
+            //        {
+            //            dpd.SetScrollOrientation(DatePickerDialog.ScrollOrientation.Vertical);
+            //        }
+            //    }
+            //    dpd.DateSet += (oo, ee) =>
+            //    {
 
-                };
+            //    };
 
-                dpd.Show(base.FragmentManager, "Datepickerdialog");
+            //    dpd.Show(base.FragmentManager, "Datepickerdialog");
             };
 
             return view;
@@ -128,8 +128,8 @@
         public override void OnResume()
         {
             base.OnResume();
-            DatePickerDialog dpd = (DatePickerDialog)base.FragmentManager.FindFragmentByTag("Datepickerdialog");
-            if (dpd != null) dpd.OnDateSetListener = this;
+            //DatePickerDialog dpd = (DatePickerDialog)base.FragmentManager.FindFragmentByTag("Datepickerdialog");
+            //if (dpd != null) dpd.OnDateSetListener = this;
         }
 
         //void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
