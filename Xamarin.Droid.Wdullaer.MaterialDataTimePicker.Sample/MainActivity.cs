@@ -8,6 +8,10 @@
     using Android.Support.V7.App;
     using Android.Support.V7.Widget;
 
+    //https://www.youtube.com/watch?v=Yb_yGtk7K1E
+    //https://channel9.msdn.com/Shows/NET-Community-Standups/Xamarin-NET-Community-Standup-June-6th-2019-AndroidX-with-Jon-Dick
+    //https://forums.xamarin.com/discussion/130296/announcing-xamarin-android-9-0-p-preview/
+
     [Activity(Label = "@string/app_name", 
         MainLauncher = true, 
         Theme = "@style/AppTheme",
