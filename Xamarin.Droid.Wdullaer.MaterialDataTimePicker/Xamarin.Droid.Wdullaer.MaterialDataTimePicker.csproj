@@ -9,12 +9,12 @@
     <PackageTags>xamarin;android;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
     <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
 
-    <IsBindingProject>true</IsBindingProject>
+    <!--<IsBindingProject>true</IsBindingProject>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
-    <AndroidClassParser>class-parse</AndroidClassParser>
-    <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
+    <AndroidClassParser>class-parse</AndroidClassParser> 
+    <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>-->
   </PropertyGroup>
  
   <ItemGroup>
@@ -24,10 +24,14 @@
     <LibraryProjectZip Include="Jars\*.aar" />
     <TransformFile Include="Transforms\*.xml" />
   </ItemGroup>
- 
+
   <ItemGroup>
-    <ProjectReference Include="..\Androidx.AppCompat\Androidx.AppCompat.csproj" />
-    <ProjectReference Include="..\Androidx.RecyclerView\Androidx.RecyclerView.csproj" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView" Version="28.0.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Additions\" />
   </ItemGroup>
  
 </Project>
