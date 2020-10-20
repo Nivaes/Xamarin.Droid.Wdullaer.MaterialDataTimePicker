@@ -1,15 +1,13 @@
 ﻿namespace Nivaes.MaterialDataTimePicker.Droid
 {
-    using System;
-    using Android.Graphics;
     using Android.OS;
     using Android.Util;
     using Android.Views;
     using Android.Widget;
-    using Com.Wdullaer.MaterialDateTimePicker.Time;
+    using AndroidX.Fragment.App;
     using Java.Util;
 
-    public class TimePickerFragment : Android.App.Fragment, TimePickerDialog.IOnTimeSetListener
+    public class TimePickerFragment : Fragment, TimePickerDialog.IOnTimeSetListener
     {
         private TextView timeTextView;
         private CheckBox mode24Hours;

@@ -13,8 +13,12 @@
     <RepositoryType>git</RepositoryType>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>4.1.0.0</Version>
+    <Version>4.2.3.0</Version>
 
+    <RepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</RepoRoot>
+    <BaseOutputPath>$(RepoRoot)Artifacts\bin\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(RepoRoot)Artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    
     <LangVersion>latest</LangVersion>
     <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000</NoWarn>
     <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>

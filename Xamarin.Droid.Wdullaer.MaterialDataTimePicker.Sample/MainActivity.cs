@@ -2,21 +2,18 @@
 {
     using Android.App;
     using Android.OS;
-    using Android.Support.Design.Widget;
-    using Android.Support.V4.App;
-    using Android.Support.V4.View;
-    using Android.Support.V7.App;
-    using Android.Support.V7.Widget;
-
-    //https://www.youtube.com/watch?v=Yb_yGtk7K1E
-    //https://channel9.msdn.com/Shows/NET-Community-Standups/Xamarin-NET-Community-Standup-June-6th-2019-AndroidX-with-Jon-Dick
-    //https://forums.xamarin.com/discussion/130296/announcing-xamarin-android-9-0-p-preview/
+    using AndroidX.AppCompat.App;
+    using AndroidX.ViewPager.Widget;
+    using Google.Android.Material.Tabs;
+    using AndroidX.AppCompat.Widget;
+    using AndroidX.Fragment.App;
 
     [Activity(Label = "@string/app_name", 
         MainLauncher = true, 
         Theme = "@style/AppTheme",
         Icon = "@mipmap/ic_launcher")]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity
+        : AppCompatActivity
     {
         ViewPager viewPager;
         PickerAdapter adapter;
@@ -38,13 +35,13 @@
                 tabLayout.GetTabAt(i).SetText(adapter.GetTitle(i));
         }
 
-        private class PickerAdapter : Android.Support.V13.App.FragmentPagerAdapter
+        private class PickerAdapter : FragmentPagerAdapter
         {
-            Android.App.Fragment timePickerFragment;
-            Android.App.Fragment datePickerFragment;
+            AndroidX.Fragment.App.Fragment timePickerFragment;
+            AndroidX.Fragment.App.Fragment datePickerFragment;
 
-            public PickerAdapter(Android.App.FragmentManager fm)
-                :base(fm)
+            public PickerAdapter(AndroidX.Fragment.App.FragmentManager fm)
+                : base(fm)
             {
                 timePickerFragment = new TimePickerFragment();
                 datePickerFragment = new DatePickerFragment();

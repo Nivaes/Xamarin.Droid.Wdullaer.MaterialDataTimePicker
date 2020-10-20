@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFramework>MonoAndroid90</TargetFramework>
+    <TargetFramework>monoandroid11.0</TargetFramework>
 
     <AssemblyName>Com.Wdullaer.MaterialDateTimePicker</AssemblyName>
     <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
@@ -24,14 +24,18 @@
     <LibraryProjectZip Include="Jars\*.aar" />
     <TransformFile Include="Transforms\*.xml" />
   </ItemGroup>
-
+ 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView" Version="28.0.0.1" />
+    <AndroidAarLibrary Include="Jars\MaterialDateTimePicker-4.2.3.aar" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Additions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0" />
+    <PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.1.0.5" />
   </ItemGroup>
  
 </Project>

@@ -1,14 +1,14 @@
 ﻿namespace Nivaes.MaterialDataTimePicker.Droid
 {
-    using Android.Graphics;
     using Android.OS;
     using Android.Util;
     using Android.Views;
     using Android.Widget;
-    using Com.Wdullaer.MaterialDateTimePicker.Date;
+    using AndroidX.Fragment.App;
     using Java.Util;
+    using Com.Wdullaer.MaterialDateTimePicker.Date;
 
-    public class DatePickerFragment : Android.App.Fragment, DatePickerDialog.IOnDateSetListener
+    public class DatePickerFragment : Fragment, DatePickerDialog.IOnDateSetListener
     {
         private TextView dateTextView;
         private CheckBox modeDarkDate;

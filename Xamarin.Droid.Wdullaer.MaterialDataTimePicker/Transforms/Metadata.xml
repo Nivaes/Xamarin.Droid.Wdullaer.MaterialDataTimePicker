@@ -1,5 +1,5 @@
 ﻿<metadata>
-    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker']" name="managedName">Com.Wdullaer.MaterialDateTimePicker</attr>
+    <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker']" name="managedName">Com.Wdullaer.MaterialDateTimePicker</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Date</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
 
@@ -154,6 +154,6 @@
                 <parameter name="second" type="int" />
             </method>
         </interface>
-    </add-node>
+    </add-node>-->
 
 </metadata>
