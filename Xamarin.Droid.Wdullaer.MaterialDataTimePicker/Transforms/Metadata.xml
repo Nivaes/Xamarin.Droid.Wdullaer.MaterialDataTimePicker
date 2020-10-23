@@ -1,15 +1,15 @@
 ﻿<metadata>
-    <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker']" name="managedName">Com.Wdullaer.MaterialDateTimePicker</attr>
+    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker']" name="managedName">Com.Wdullaer.MaterialDateTimePicker</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Date</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
 
-    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']">
+     <!--add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']">
         <class abstract="false" deprecated="not deprecated" final="false" name="GravitySnapHelper" static="true" visibility="public"
                extends="android.support.v7.widget.LinearSnapHelper">
         </class>
-    </add-node>
+    </add-node>-->
     
-    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']">
+    <!--<add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']">
         <interface abstract="true" deprecated="not deprecated" final="false" name="DatePickerController" static="true" visibility="public">
         </interface>
 
@@ -98,9 +98,30 @@
                 <parameter name="dayOfMonth" type="int" />
             </method>
         </interface>
-    </add-node>
 
-    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']">
+        <interface abstract="true" deprecated="not deprecated" final="false" name="DatePickerDialog.OnDateChangedListener" static="true" visibility="public" jni-signature="Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$OnDateChangedListener;">
+            <method abstract="true" deprecated="not deprecated" final="false" name="onDateChanged" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+            </method>
+        </interface>
+    </add-node>-->
+
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
+
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" />
+
+    <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" name="visibility">public</attr>-->
+
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='SimpleMonthAdapter']" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='setThemeDark' and count(parameter)=1 and parameter[1][@type='bool']]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='vibrate' and count(parameter)=1 and parameter[1][@type='bool']]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='dismissOnPause' and count(parameter)=1 and parameter[1][@type='bool']]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='showYearPickerFirst' and count(parameter)=1 and parameter[1][@type='bool']]" />-->
+
+    <!--<add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']">
         <interface abstract="true" deprecated="not deprecated" final="false" name="TimePickerController" static="true" visibility="public">
 
         </interface>
@@ -155,5 +176,11 @@
             </method>
         </interface>
     </add-node>-->
+
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='Timepoint']" />-->
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']" />-->
+    
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='onClick' and count(parameter)=1 and parameter[1][@type='android.view.View']]" />-->
+
 
 </metadata>

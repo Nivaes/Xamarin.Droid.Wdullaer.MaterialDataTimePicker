@@ -3,10 +3,10 @@
     using Android.App;
     using Android.OS;
     using AndroidX.AppCompat.App;
-    using AndroidX.ViewPager.Widget;
-    using Google.Android.Material.Tabs;
     using AndroidX.AppCompat.Widget;
     using AndroidX.Fragment.App;
+    using AndroidX.ViewPager.Widget;
+    using Google.Android.Material.Tabs;
 
     [Activity(Label = "@string/app_name", 
         MainLauncher = true, 
@@ -24,12 +24,12 @@
 
             base.SetContentView(Resource.Layout.activity_main);
 
-            adapter = new PickerAdapter(base.FragmentManager);
+            adapter = new PickerAdapter(base.SupportFragmentManager);
             viewPager = base.FindViewById< ViewPager>(Resource.Id.pager);
             viewPager.Adapter = adapter;
 
             SetSupportActionBar(base.FindViewById<Toolbar>(Resource.Id.toolbar));
-            TabLayout tabLayout = base.FindViewById< TabLayout>(Resource.Id.tabs);
+            TabLayout tabLayout = base.FindViewById<TabLayout>(Resource.Id.tabs);
             tabLayout.SetupWithViewPager(viewPager);
             for (int i = 0; i < adapter.Count; i++) //noinspection ConstantConditions
                 tabLayout.GetTabAt(i).SetText(adapter.GetTitle(i));
@@ -49,7 +49,7 @@
 
             public override int Count => 2;
 
-            public override Android.App.Fragment GetItem(int position)
+            public override AndroidX.Fragment.App.Fragment GetItem(int position)
             {
                 switch (position)
                 {

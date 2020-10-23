@@ -1,17 +1,26 @@
 ﻿namespace Com.Wdullaer.MaterialDateTimePicker.Date
 {
-    using Java.Util;
-    using static Android.Views.View;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
-    //public partial class DatePickerDialog
-    //{
-    //    //public DatePickerDialog(DatePickerDialog.IOnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth)
-    //    //{
-    //    //    Initialize(callBack, year, monthOfYear, dayOfMonth);
-    //    //}
+    public partial class DatePickerDialog
+        : IDatePickerController
+    {
+        ScrollOrientation IDatePickerController.ScrollOrientation
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
-    //    //DatePickerDialog.ScrollOrientation IDatePickerController.ScrollOrientation => GetScrollOrientation();
-
-    //    //DatePickerDialog.Version IDatePickerController.Version => GetVersion();
-    //}
+        DatePickerDialog.Version IDatePickerController.Version
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
 }

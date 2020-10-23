@@ -32,6 +32,11 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>PdbOnly</DebugType>
@@ -103,21 +108,24 @@
     <AndroidResource Include="Resources\values-w820dp\dimens.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xamarin.Droid.Wdullaer.MaterialDataTimePicker\Xamarin.Droid.Wdullaer.MaterialDataTimePicker.csproj">
-      <Project>{647f59aa-4042-471b-9c5e-4a93b1aa4c68}</Project>
-      <Name>Xamarin.Droid.Wdullaer.MaterialDataTimePicker</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.AppCompat">
-      <Version>1.1.0</Version>
+      <Version>1.2.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat.AppCompatResources">
+      <Version>1.2.0.4</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.ViewPager">
-      <Version>1.0.0</Version>
+      <Version>1.0.0.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Google.Android.Material">
       <Version>1.0.0.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin.Droid.Wdullaer.MaterialDataTimePicker\Xamarin.Droid.Wdullaer.MaterialDataTimePicker.csproj">
+      <Project>{647f59aa-4042-471b-9c5e-4a93b1aa4c68}</Project>
+      <Name>Xamarin.Droid.Wdullaer.MaterialDataTimePicker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
