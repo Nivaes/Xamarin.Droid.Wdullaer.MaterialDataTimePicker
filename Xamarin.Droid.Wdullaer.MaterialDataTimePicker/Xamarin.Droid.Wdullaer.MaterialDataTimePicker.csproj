@@ -1,51 +1,38 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFrameworks>MonoAndroid81</TargetFrameworks>
+    <TargetFramework>monoandroid11.0</TargetFramework>
+
     <AssemblyName>Com.Wdullaer.MaterialDateTimePicker</AssemblyName>
     <RootNamespace>Com.Wdullaer.MaterialDateTimePicker</RootNamespace>
     <Description>Binding library of https://github.com/wdullaer/MaterialDateTimePicker</Description>
     <PackageId>Nivaes.Droid.Wdullaer.MaterialDateTimePicker</PackageId>
-    <PackageTags>xamarin;android;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
+    <PackageTags>xamarin;android;androidx;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
     <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
+
+    <Version>4.2.3.0</Version>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="Resources\*.cs" />
-    <Compile Remove="Resources\*.cs" />
-  </ItemGroup>
-  
-  <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+  <PropertyGroup>
     <IsBindingProject>true</IsBindingProject>
+    <OutputType>Library</OutputType>
+    <!--<AndroidClassParser>class-parse</AndroidClassParser>-->
   </PropertyGroup>
 
-  <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid'))">
-    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-  </PropertyGroup>
-  
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid'))">
-    <AndroidResource Include="Resources\**\*.xml" SubType="Designer" Generator="MSBuild:UpdateAndroidResources" />
+  <!--<PropertyGroup>
+    <AndroidUseManagedDesignTimeResourceGenerator>False</AndroidUseManagedDesignTimeResourceGenerator>
+  </PropertyGroup>-->
+ 
+  <ItemGroup>
+    <None Include="Resources\**\*.cs" />
+    <Compile Remove="Resources\**\*.cs" />
+    <AndroidResource Include="Resources\**\*.xml" Generator="MSBuild:UpdateAndroidResources" />
     <LibraryProjectZip Include="Jars\*.aar" />
-    <TransformFile Include="Transforms\*.xml" SubType="Designer" />
+    <TransformFile Include="Transforms\*.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="Mono.Android" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.4" />
+    <PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.1.0.5" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v13" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="MSBuild.Sdk.Extras" Version="2.1.2" />
-  </ItemGroup>
-
-  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
-
+ 
 </Project>
