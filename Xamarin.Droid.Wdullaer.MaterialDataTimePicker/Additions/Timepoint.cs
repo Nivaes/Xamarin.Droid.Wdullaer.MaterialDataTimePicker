@@ -7,7 +7,7 @@
     {
         public int CompareTo(Java.Lang.Object o)
         {
-            throw new NotImplementedException();
+            return this.CompareTo((Timepoint)o);
         }
     }
 }

@@ -210,3 +210,6 @@ dotnet_analyzer_diagnostic.severity = none
 
 # CS0114: Member hides inherited member; missing override keyword
 dotnet_diagnostic.CS0114.severity = none
+
+# CS0472: The result of the expression is always the same since a value of this type is never equal to 'null'
+dotnet_diagnostic.CS0472.severity = none

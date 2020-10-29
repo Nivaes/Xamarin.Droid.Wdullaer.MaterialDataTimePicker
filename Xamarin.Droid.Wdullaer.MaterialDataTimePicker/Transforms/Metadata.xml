@@ -3,11 +3,196 @@
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Date</attr>
     <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']" name="managedName">Com.Wdullaer.MaterialDateTimePicker.Time</attr>
 
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
+    <!--<remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]"/>
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='registerOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']" />
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
-    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" />
 
+    
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" />-->
+
+    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" name="visibility">public</attr>
+
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='SimpleMonthAdapter']" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='getScrollOrientation' and count(parameter)=0]" />
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerController']/method[@name='getVersion' and count(parameter)=0]" />
+
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerDialog.OnTimeSetListener']/method[@name='onTimeSet' and count(parameter)=4 and parameter[1][@type='com.wdullaer.materialdatetimepicker.time.TimePickerDialog'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]" />
+
+    <!--<add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/class[@name='TimePickerDialog']">
+        <method abstract="false" deprecated="not deprecated" final="false" name="initialize" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+            <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener" />
+            <parameter name="hourOfDay" type="int" />
+            <parameter name="minute" type="int" />
+            <parameter name="second" type="int" />
+            <parameter name="is24HourMode" type="bool" />
+        </method>
+    </add-node>-->
+
+    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']/interface[@name='TimePickerDialog.OnTimeSetListener']">
+        <method abstract="true" deprecated="not deprecated" final="false" name="onTimeSet" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+            <parameter name="view" type="com.wdullaer.materialdatetimepicker.time.TimePickerDialog">
+            </parameter>
+            <parameter name="hourOfDay" type="int">
+            </parameter>
+            <parameter name="minute" type="int">
+            </parameter>
+            <parameter name="second" type="int">
+            </parameter>
+        </method>
+    </add-node>
+
+    <!--<add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker']">
+        <class abstract="false" deprecated="not deprecated" final="false" name="GravitySnapHelper" static="true" visibility="public"
+               extends="android.support.v7.widget.LinearSnapHelper">
+        </class>
+    </add-node>
+    
+    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']">
+        <interface abstract="true" deprecated="not deprecated" final="false" name="DatePickerController" static="true" visibility="public">
+        </interface>
+
+        <class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version&gt;" jni-extends="Ljava/lang/Enum;" final="true" name="DatePickerDialog.Version" static="true" visibility="public" jni-signature="Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;">
+            <method abstract="false" deprecated="not deprecated" final="false" name="valueOf" jni-signature="(Ljava/lang/String;)Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;" bridge="false" native="false" return="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" jni-return="Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;" static="true" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="name" type="java.lang.String"></parameter>
+            </method>
+            <method abstract="false" deprecated="not deprecated" final="false" name="values" bridge="false" native="false" return="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version[]" static="true" synchronized="false" synthetic="false" visibility="public"></method>
+            <field deprecated="not deprecated" final="true" name="VERSION_1" static="true" transient="false" type="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" type-generic-aware="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" visibility="public" volatile="false"></field>
+            <field deprecated="not deprecated" final="true" name="VERSION_2" static="true" transient="false" type="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" type-generic-aware="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" visibility="public" volatile="false"></field>
+        </class>
+        
+        <class abstract="false" deprecated="not deprecated" final="false" name="DatePickerDialog" static="true" visibility="public"
+               extends="androidx.appcompat.app.AppCompatDialogFragment">
+            <implements
+                name="android.view.View.OnClickListener"
+                name-generic-aware="android.view.View.OnClickListener"
+                jni-type="Landroid/view/View$OnClickListener;"/>
+            <implements
+                name="com.wdullaer.materialdatetimepicker.date.DatePickerController"
+                name-generic-aware="com.wdullaer.materialdatetimepicker.date.DatePickerController" />
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="newInstance" bridge="false" native="false" return="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog" static="true" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener" />
+                <parameter name="year" type="int" />
+                <parameter name="monthOfYear" type="int" />
+                <parameter name="dayOfMonth" type="int" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="newInstance" bridge="false" native="false" return="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog" static="true" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="newInstance" bridge="false" native="false" return="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog" static="true" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener" />
+                <parameter name="initialSelection" type="java.util.Calendar" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="initialize" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener" />
+                <parameter name="year" type="int" />
+                <parameter name="monthOfYear" type="int" />
+                <parameter name="dayOfMonth" type="int" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="initialize" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog.IOnDateSetListener" />
+                <parameter name="initialSelection" type="java.util.Calendar" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="onClick" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="v" type="android.view.View" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="setThemeDark" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="themeDark" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="vibrate" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="dismissOnPause" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="showYearPickerFirst" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="enableSeconds" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="enableSeconds" type="boolean" jni-type="Z"></parameter>
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="getVersion" jni-signature="()Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;" bridge="false" native="false" return="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" jni-return="Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;" static="false" synchronized="false" synthetic="false" visibility="public"></method>
+            <method abstract="false" deprecated="not deprecated" final="false" name="setVersion" jni-signature="(Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="version" type="com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version" jni-type="Lcom/wdullaer/materialdatetimepicker/date/DatePickerDialog$Version;"></parameter>
+            </method>
+        </class>
+
+        <interface abstract="true" deprecated="not deprecated" final="false" name="DatePickerDialog.OnDateSetListener" static="true" visibility="public">
+            <method abstract="true" deprecated="not deprecated" final="false" name="onDateSet" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="view" type="Com.Wdullaer.MaterialDateTimePicker.Date.DatePickerDialog" />
+                <parameter name="year" type="int" />
+                <parameter name="monthOfYear" type="int" />
+                <parameter name="dayOfMonth" type="int" />
+            </method>
+        </interface>
+    </add-node>
+
+    <add-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.time']">
+        <interface abstract="true" deprecated="not deprecated" final="false" name="TimePickerController" static="true" visibility="public">
+
+        </interface>
+
+        <class abstract="false" deprecated="not deprecated" final="false" name="TimePickerDialog" static="true" visibility="public" extends="android.support.v7.app.AppCompatDialogFragment">
+            <implements
+                name="com.wdullaer.materialdatetimepicker.time.RadialPickerLayout.OnValueSelectedListener"
+                name-generic-aware="com.wdullaer.materialdatetimepicker.time.RadialPickerLayout.OnValueSelectedListener"/>
+            <implements
+                name="com.wdullaer.materialdatetimepicker.time.TimePickerController"
+                name-generic-aware="com.wdullaer.materialdatetimepicker.time.TimePickerController" />
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="initialize" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="callBack" type="Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog.IOnTimeSetListener" />
+                <parameter name="hourOfDay" type="int" />
+                <parameter name="minute" type="int" />
+                <parameter name="second" type="int" />
+                <parameter name="is24HourMode" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="advancePicker" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="index" type="int" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="enablePicker" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="onValueSelected" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="newValue" type="com.wdullaer.materialdatetimepicker.time.Timepoint" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="setThemeDark" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="themeDark" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="vibrate" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+            <method abstract="false" deprecated="not deprecated" final="false" name="dismissOnPause" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="vibrate" type="bool" />
+            </method>
+
+        </class>
+
+        <interface abstract="true" deprecated="not deprecated" final="false" name="TimePickerDialog.OnTimeSetListener" static="true" visibility="public">
+            <method abstract="true" deprecated="not deprecated" final="false" name="onTimeSet" bridge="false" native="false" return="void" static="false" synchronized="false" synthetic="false" visibility="public">
+                <parameter name="view" type="Com.Wdullaer.MaterialDateTimePicker.Time.TimePickerDialog" />
+                <parameter name="hourOfDay" type="int" />
+                <parameter name="minute" type="int" />
+                <parameter name="second" type="int" />
+            </method>
+        </interface>
+    </add-node>-->
 </metadata>
