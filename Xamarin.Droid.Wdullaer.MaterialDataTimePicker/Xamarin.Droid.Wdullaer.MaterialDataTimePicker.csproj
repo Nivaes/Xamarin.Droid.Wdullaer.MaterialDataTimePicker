@@ -9,7 +9,7 @@
     <PackageTags>xamarin;android;androidx;monodroid;MaterialDateTimePicker;DatePicker;TimePicker</PackageTags>
     <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
 
-    <Version>4.2.3.4</Version>
+    <Version>4.2.3.5</Version>
   </PropertyGroup>
 
   <PropertyGroup>

@@ -11,7 +11,8 @@
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='DatePickerDialog']/method[@name='unregisterOnDateChangedListener' and count(parameter)=1 and parameter[1][@type='com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateChangedListener']]" />
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" />-->
 
-    <attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" name="visibility">public</attr>
+    <!--<attr path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" name="visibility">public</attr>-->
+    <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/interface[@name='DatePickerDialog.OnDateChangedListener']" />
 
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='SimpleMonthAdapter']" />
     <remove-node path="/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']" />

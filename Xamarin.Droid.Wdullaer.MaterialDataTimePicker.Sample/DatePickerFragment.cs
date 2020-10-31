@@ -98,7 +98,7 @@
                             now.Get(CalendarField.DayOfMonth)
                     );
                 }
-                dpd.SetThemeDark(modeDarkDate.Checked);
+                dpd.ThemeDark = modeDarkDate.Checked;
                 dpd.Vibrate(vibrateDate.Checked);
                 dpd.DismissOnPause(dismissDate.Checked);
                 dpd.ShowYearPickerFirst(showYearFirst.Checked);
